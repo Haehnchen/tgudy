@@ -32,7 +32,7 @@ plugin.tx_basictpl.page.config {
 plugin.tx_basictpl.page.shortcutIcon = {$path.template}/favicon.ico
 plugin.tx_basictpl.page.includeJSlibs {
   jquery = EXT:basictpl/res/js/jquery/jquery.min.js
-  jquery_fancybox = EXT:basictpl/res/js/jquery/fancybox/jquery.fancybox-1.3.4.pack.js
+  jquery_fancybox = EXT:basictpl/res/js/jquery/fancybox2/jquery.fancybox.pack.js
 	jquery_easing = EXT:basictpl/res/js/jquery/jquery.easing.1.3.js
 	jquery_slider = EXT:basictpl/res/js/jquery/jquery.bxSlider.min.js
 }
@@ -41,7 +41,7 @@ plugin.tx_basictpl.page.includeCSS {
   file1 = EXT:basictpl/res/css/reset.css
   file2 = EXT:basictpl/res/css/text.css  
   file3 = EXT:basictpl/res/css/960.css
-  file4 = EXT:basictpl/res/js/jquery/fancybox/jquery.fancybox-1.3.4.css
+  file4 = EXT:basictpl/res/js/jquery/fancybox2/jquery.fancybox.css
   
   file10 = EXT:basictpl/res/menu.css
   file11 = EXT:basictpl/res/css/typo3.css
