@@ -1,0 +1,25 @@
+tGudy - A TYPO3 Template
+
+Simply import the t3d and you have a working TYPO3 website with:
+ - 50+ Layouts for tables, listing, boxes, frames, headers, submenus, ...
+ - free selectable colors for header
+ - CSS3 Animation (Transitions, Transforms): glow and spot movement background
+ - 4 page grid layouts
+ - content silder for header articles and fallback for empty header region
+ - layouts for extension: tt_news and multicolumn
+ - TSConfig for RTE editor which includes some extra elements like buttons
+ - 3 Level Menu
+
+All possible layouts and settings are documented in a single PDF.
+
+Website based on:
+ - 960gs
+ - jQuery
+ - Fancybox
+ - jQuery bxSlider - content slider
+ - TYPO3: backend_layouts, tt_news, multicolumns
+
+All core template files are delivered as TYPO3 extension. Customizing is also possible with your own CSS stuff.
+
+Constant (Editor):
+To change template settings all values are put into TYPO3 constants. So change base color, font type and other variable very easy.
