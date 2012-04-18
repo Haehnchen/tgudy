@@ -1,0 +1,793 @@
+a:4:{s:4:"save";a:3:{s:13:"extension_key";s:8:"basictpl";s:18:"print_wop_comments";s:1:"0";s:15:"overwrite_files";a:8:{s:9:"ChangeLog";s:1:"1";s:10:"README.txt";s:1:"1";s:12:"ext_icon.gif";s:1:"1";s:14:"ext_tables.php";s:1:"1";s:19:"doc/wizard_form.dat";s:1:"1";s:20:"doc/wizard_form.html";s:1:"1";s:29:"static/basictpl/constants.txt";s:1:"1";s:25:"static/basictpl/setup.txt";s:1:"1";}}s:6:"emconf";a:1:{i:1;a:7:{s:5:"title";s:14:"Basic Template";s:11:"description";s:0:"";s:8:"category";s:9:"templates";s:5:"state";s:6:"stable";s:12:"dependencies";s:0:"";s:6:"author";s:18:"Daniel Espendiller";s:12:"author_email";s:22:"daniel@espendiller.net";}}s:2:"ts";a:1:{i:1;a:3:{s:5:"title";s:8:"basictpl";s:9:"constants";s:3255:"plugin.tx_basictpl {
+
+  # cat=plugin.tx_basictpl/enable/010; type=file[png,jpg,gif]; label=Logo file: Use this file as image
+  logo.path = 
+
+  # cat=plugin.tx_basictpl/enable/010; type=int+; label=Logo image width: Image width for Logo
+  logo.width = 250
+  
+  # cat=plugin.tx_basictpl/enable/010; type=int+; label=Footer menu: Starting point tree - pid for footer menu
+  menu.footer.pid = 1
+
+  # cat=plugin.tx_basictpl.ext/dims/010; type=boolean; label=Use lightbox: Enable Lightbox for images
+  logo.lightbox.enable = 1
+
+  # cat=plugin.tx_basictpl.ext/dims/010; type=boolean; label=Lightbox for tt_news: Use Lightbox images in tt_news pages
+  lightbox.tt_news = 1
+
+  # cat=plugin.tx_basictpl.ext/dims/010; type=boolean; label=Use betterimg tags: Set best available img tags (title, label, caption, altext, header, ...)
+  lightbox.settags = 1
+
+  # cat=plugin.tx_basictpl.ext/file/010; type=boolean; label=Set page config: Add default page config object
+  page.defaults = 1
+
+  # cat=plugin.tx_basictpl.ext/file/010; type=boolean; label=Include html templates files: Include default CSS, JS, Favicon from template directory
+  page.includes = 1
+
+  # cat=plugin.tx_basictpl.ext/file/010; type=boolean; label=Append Keywords: Append page keywords with global keywords
+  page.meta.appendkeywords = 1
+
+  # cat=plugin.tx_basictpl.ext/file/010; type=boolean; label=Use default meta data: user description and author field from global if not entered per page
+  page.meta.useglobal= 1
+
+  # cat=plugin.tx_basictpl.ext/file/010; type=boolean; label=Overwrite page title: Enable page title overwrite
+  page.title.overwrite = 1
+
+  # cat=plugin.tx_basictpl.ext/file/010; type=boolean; label=Use tt_news title: Overwrite page title and append tt_news single view title
+  page.title.news = 1
+
+  # cat=plugin.tx_basictpl.ext/file/010;  type=small; label=Devide title: Char that splits page title and global meta title
+  page.title.divider = -
+
+  # cat=plugin.tx_basictpl.ext/typo/010; type=boolean; label=Field IDs for elements: Add section_frame and layout to content elements
+  css_styled_content.wraplayouts = 1
+  
+  # cat=plugin.tx_basictpl.ext/typo/010; type=boolean; label=Field IDs for elements: Add section_frame and layout to content elements
+  css_styled_content.wraplayouts.addtype = 1  
+
+  # cat=plugin.tx_basictpl.ext/typo/010; type=boolean; label= Wrap Contentelements: wraps elements to get header and content separately
+  css_styled_content.wraptext = 1
+
+  # cat=plugin.tx_basictpl.ext/typo/010; type=boolean; label= Set images size per colPos: You can set may images sizes depending on colPos use styles.content.imgtext.colPosX.maxW
+  css_styled_content.imagesize = 1
+
+  # cat=plugin.tx_basictpl.ext/typo/010; type=boolean; label= Set images size per colPos: You can set may images sizes depending on colPos use styles.content.imgtext.colPosX.maxW
+  css_styled_content.extraelements = 1
+
+  # cat=plugin.tx_basictpl.ext/color/010; type=boolean; label= Enable RealURL: Enable RealURL and set default config
+  config.realurl.enable = 0
+
+  # cat=plugin.tx_basictpl.ext/color/010; type=boolean; label= Use RealURL with tt_news: Provide default tt_news config for tt_news
+  config.realurl.tt_news = 0
+}";s:5:"setup";s:13786:"[globalVar = LIT:1 = {$plugin.tx_basictpl.config.realurl.enable}]
+config.prefixLocalAnchors = all
+config.simulateStaticDocuments = 0
+config.baseURL = {$path.baseURL}
+config.tx_realurl_enable = 1
+[global]
+
+[globalVar = LIT:1 = {$plugin.tx_basictpl.config.realurl.enable}] && [globalVar = LIT:1 = {$plugin.tx_basictpl.config.realurl.tt_news}]
+plugin.tt_news {
+  catTextMode = 1
+  useHRDatesSingle = 1
+  useHRDatesSingleWithoutDay = 0
+  dontUseBackPid = 1
+  useHRDates = 1
+}
+
+[globalVar = LIT:1 = {$plugin.tx_basictpl.page.defaults}]
+page.config {
+  xhtml_cleaning = all
+  xmlprologue = none
+  doctype = xhtml_trans
+  htmlTag_setParams = xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de"
+  language = de
+  locale_all = de_DE@euro
+    
+  disablePrefixComment = 1
+  inlineStyle2TempFile = 1
+
+  spamProtectEmailAddresses = 2
+  spamProtectEmailAddresses_atSubst = @
+  
+  meaningfulTempFilePrefix = 50
+  
+  sendCacheHeaders = 1
+  
+  disableImgBorderAttr = 1
+  
+  // TYPO3 4.6 internal scriptmerger
+  minifyCSS = 1
+  minifyJS = 1
+
+  concatenateCss = 1
+  concatenateJs = 1  
+}
+[global]
+
+
+[globalVar = LIT:1 = {$plugin.tx_basictpl.page.includes}]
+page.shortcutIcon = {$path.template}/favicon.ico
+
+
+page.includeJSlibs {
+  jquery = {$path.jquery}/jquery.min.js
+  jquery_fancybox = {$path.jquery}/fancybox/jquery.fancybox-1.3.4.pack.js
+}
+
+page.includeCSS {
+  file1 = {$path.template}/css/reset.css
+  file2 = {$path.template}/css/text.css  
+  file3 = {$path.template}/css/960.css
+  file4 = {$path.jquery}/fancybox/jquery.fancybox-1.3.4.css
+  
+  file10 = {$path.template}/menu.css
+  file11 = {$path.template}/css/typo3.css
+  
+  file20 = {$path.template}/style.css
+}
+[global]
+
+page.includeJS {
+  file10 = {$path.template}/js/page.js  
+}
+
+[globalVar = LIT:1 = {$plugin.tx_basictpl.page.meta.appendkeywords}]
+#append keywords
+page.meta.keywords {
+    # Set 'current' value
+    setCurrent = {$meta.keywords}
+    # Set content to match current
+    current = 1
+    # Prepend page keywords
+    prepend = TEXT
+    prepend {
+        data = page:keywords
+        # if empty, return immediately
+        trim = 1
+        required = 1
+        # wrap it
+        innerWrap {
+            # wrap only if {$meta.keywords} is not empty
+            if.isTrue.current = 1
+            # We must return a wrap pattern here
+            append = TEXT
+            append.value = |,
+        }
+    }
+}
+[global]
+
+[globalVar = LIT:1 = {$plugin.tx_basictpl.page.meta.useglobal}]
+page.meta.DESCRIPTION.ifEmpty = {$meta.description}
+page.meta.author.ifEmpty = {$meta.author}
+[global]
+
+[globalVar = LIT:1 = {$plugin.tx_basictpl.page.title.overwrite}]
+# seitentitel ueberschreiben
+page.config.noPageTitle = 1
+page.headerData.10 = TEXT
+page.headerData.10 {
+  field = title
+  noTrimWrap = |<title>| {$plugin.tx_basictpl.page.title.divider} {$meta.title}</title>|
+}
+[global]
+ 
+
+[globalVar = GP:tx_ttnews > 0] && [globalVar = LIT:1 = {$plugin.tx_basictpl.page.title.tt_news}]
+# seitentitel für tt_news singleViews
+page.headerData.10 {
+  stdWrap.data = GPvar:tx_ttnews|tt_news
+  stdWrap.wrap = {DB:tt_news:|:title}
+  insertData = 1
+}
+[global]
+
+
+
+### Frontpage link und Logo ####
+plugin.tx_basictpl.logo.text = TEXT
+plugin.tx_basictpl.logo.text {
+  value= <span>{$meta.title}</span>
+  typolink.parameter.data = leveluid:0
+  typolink.title = {$meta.title}
+  
+  # "/" should become full url
+  typolink.forceAbsoluteUrl = 1
+  
+  # remove target xhtml strict
+  typolink.target =
+  typolink.extTarget =
+}
+
+
+# Use logo as img tag
+plugin.tx_basictpl.logo.img = IMAGE
+plugin.tx_basictpl.logo.img {
+  #file = {$path.template}/img/logo.png
+  file = {$plugin.tx_basictpl.logo.path}
+  file.width= {$plugin.tx_basictpl.logo.width}
+  #file.height= 80c
+   
+  imageLinkWrap = 1
+  imageLinkWrap.enable = 1
+  imageLinkWrap.typolink {
+    #title = Link Titel
+    parameter.data = leveluid:0
+    title = {$meta.title}
+    forceAbsoluteUrl = 1
+  }
+   altText = {$meta.title}
+}
+
+[globalVar = LIT: = {$plugin.tx_basictpl.logo.path}]
+plugin.tx_basictpl.logo.obj < plugin.tx_basictpl.logo.text
+[else]
+plugin.tx_basictpl.logo.obj < plugin.tx_basictpl.logo.img
+[global]
+
+
+plugin.tx_basictpl.breadcrumb = COA
+plugin.tx_basictpl.breadcrumb.10 = HMENU
+plugin.tx_basictpl.breadcrumb.10.special = rootline
+plugin.tx_basictpl.breadcrumb.10.special.range = 0 | -1
+plugin.tx_basictpl.breadcrumb.10.1 = TMENU
+plugin.tx_basictpl.breadcrumb.10.1 {
+  noBlur = 1
+  NO.linkWrap = | &raquo; ||*|| &raquo; ||*||
+  CUR = 1
+  CUR.ATagParams = class=active
+  #CUR.doNotLinkIt = 1
+}
+ 
+[globalVar = GP:tx_ttnews|tt_news > 0]
+
+/* 
+check this on TYPO4.6 above doesnt work
+plugin.tx_basictpl.breadcrumb.20 = RECORDS
+plugin.tx_basictpl.breadcrumb.20 {
+  tables = tt_news
+  source.data = GPvar: tx_ttnews | tt_news
+  conf.tt_news = COA
+  conf.tt_news.20 = TEXT
+  conf.tt_news.20.field = title
+  conf.tt_news.20.noTrimWrap= | &raquo; ||
+}
+*/
+
+plugin.tx_basictpl.breadcrumb.20 = RECORDS
+plugin.tx_basictpl.breadcrumb.20 {
+  tables = tt_news
+  source.data = GPvar: tx_ttnews | tt_news
+  conf.tt_news = TEXT
+  conf.tt_news.field = title
+  conf.tt_news.noTrimWrap= | &raquo; ||
+  conf.tt_news.typolink {
+
+    parameter = {page:uid}
+    parameter.insertData = 1
+    useCacheHash = 1
+
+  
+    addQueryString = 1
+    addQueryString.method = GET
+  
+    # remove the page id from the parameters so it is not inserted twice
+    addQueryString.exclude = id
+    
+    ATagParams = class=active
+    
+  
+  }
+
+}
+[global]
+
+
+[globalVar = LIT:1 = {$plugin.tx_basictpl.logo.lightbox.enable}] && [globalVar = LIT:1 = {$plugin.tx_basictpl.lightbox.settags}]
+tt_content.image.20.1.altText.field = altText // imagecaption // header
+tt_content.image.20.1.titleText.field = titleText // imagecaption // header
+[global]
+
+
+[globalVar = LIT:1 = {$plugin.tx_basictpl.logo.lightbox.enable}] && [globalVar = LIT:1 = {$plugin.tx_basictpl.lightbox.tt_news}]
+plugin.tt_news.displaySingle.image.imageLinkWrap {
+  JSwindow = 0
+  directImageLink = 1
+  linkParams.ATagParams {
+    dataWrap = class="lightbox" rel="lightbox{field:uid}" title="{field:imagecaption//title}"
+  }
+
+  height = {$styles.content.imgtext.linkWrap.height}m
+  width = {$styles.content.imgtext.linkWrap.width}m
+}
+[global]
+
+
+[globalVar = LIT:1 = {$plugin.tx_basictpl.css_styled_content.wraplayouts}]
+#use frame and layout id in every element
+tt_content.stdWrap.innerWrap.cObject.default.15.postCObject = TEXT
+tt_content.stdWrap.innerWrap.cObject.default.15.postCObject {
+  value = csc-content csc-layout-{field:layout} csc-frame-{field:section_frame}
+  noTrimWrap = | |
+  insertData  = 1
+}
+[global]
+
+[globalVar = LIT:1 = {$plugin.tx_basictpl.css_styled_content.wraplayouts}] && [globalVar = LIT:1 = {$plugin.tx_basictpl.css_styled_content.wraplayouts.addtype}]
+tt_content.stdWrap.innerWrap.cObject.default.15.postCObject.append = CASE
+tt_content.stdWrap.innerWrap.cObject.default.15.postCObject.append {
+  key.field = CType
+  
+  default = TEXT
+  default.data = field:CType
+  default.noTrimWrap = | csc-type-||
+  
+  list < .default
+  list.data = field:list_type
+  
+  required = 1
+}
+[global]
+
+[globalVar = LIT:1 = {$plugin.tx_basictpl.css_styled_content.wraptext}]
+plugin.tx_basictpl.content.wraptext = CASE
+plugin.tx_basictpl.content.wraptext {
+  key.field = section_frame
+  default=|
+  100 = TEXT
+  100.value = <div class="box-content">|</div>
+  
+  101 < .100
+}
+
+tt_content.image.20.stdWrap.wrap.cObject < plugin.tx_basictpl.content.wraptext
+tt_content.text.20.stdWrap.wrap.cObject < plugin.tx_basictpl.content.wraptext
+tt_content.table.20.stdWrap.wrap.cObject < plugin.tx_basictpl.content.wraptext
+tt_content.bullets.20.dataWrap.wrap.cObject < plugin.tx_basictpl.content.wraptext
+[global]
+
+
+[globalVar = LIT:1 = {$plugin.tx_basictpl.css_styled_content.imagesize}]
+
+#resize any image depend on colPos; this value is divided by 2 on css_styled_content
+tt_content.image.20.maxW.cObject = CASE
+tt_content.image.20.maxW.cObject {
+  key.field = colPos
+  
+  default = TEXT
+  default.value = {$styles.content.image.maxW}  
+  
+  0 = TEXT
+  0.value = {$styles.content.imgtext.colPos0.maxW}
+
+  1 = TEXT
+  1.value = {$styles.content.imgtext.colPos1.maxW}
+
+  2 = TEXT
+  2.value = {$styles.content.imgtext.colPos2.maxW}
+
+  3 = TEXT
+  3.value = {$styles.content.imgtext.colPos3.maxW}
+}
+
+# we cant set maxImageWidth with CASE so wrap them in objects
+# maxImageWidth: is used on "Image Only" to generate rows and cols
+plugin.tx_basictpl.content.main = COA
+plugin.tx_basictpl.content.main {
+  5 = LOAD_REGISTER
+
+  5.maxImageWidth = {$styles.content.imgtext.colPos0.maxW}
+  5.contentWidth = {$styles.content.imgtext.colPos0.maxW}
+ 
+  10 < styles.content.get
+  15 = RESTORE_REGISTER
+}
+
+plugin.tx_basictpl.content.left = COA
+plugin.tx_basictpl.content.left {
+  5 = LOAD_REGISTER
+
+  5.maxImageWidth = {$styles.content.imgtext.colPos1.maxW}
+  5.contentWidth = {$styles.content.imgtext.colPos1.maxW}
+ 
+  10 < styles.content.getLeft
+  10.slide = -1
+    
+  15 = RESTORE_REGISTER
+}
+
+plugin.tx_basictpl.content.right = COA
+plugin.tx_basictpl.content.right {
+  5 = LOAD_REGISTER
+
+  5.maxImageWidth = {$styles.content.imgtext.colPos2.maxW}
+  5.contentWidth = {$styles.content.imgtext.colPos2.maxW}
+ 
+  10 < styles.content.getRight
+  10.slide = -1
+  
+  15 = RESTORE_REGISTER
+}
+
+plugin.tx_basictpl.content.border = COA
+plugin.tx_basictpl.content.border {
+  5 = LOAD_REGISTER
+
+  5.maxImageWidth = {$styles.content.imgtext.colPos3.maxW}
+  5.contentWidth = {$styles.content.imgtext.colPos3.maxW}
+ 
+  10 < styles.content.getBorder
+  15 = RESTORE_REGISTER
+}
+
+[global]
+
+[globalVar = LIT:1 = {$plugin.tx_basictpl.css_styled_content.extraelements}]
+tt_content.stdWrap.innerWrap.cObject {
+  100 < tt_content.stdWrap.innerWrap.cObject.default
+  100.15.value := appendString( toggle-box)
+  
+  101 < tt_content.stdWrap.innerWrap.cObject.default
+  101.15.value := appendString( toggle-box toggle-box-open)  
+}
+[global]
+
+# FOOTER
+###############
+plugin.tx_basictpl.lib.menu.footer = COA
+plugin.tx_basictpl.lib.menu.footer {
+  10 = TEXT
+  10.value = {$meta.title}
+ 
+  15 = TEXT
+  15.noTrimWrap = | - ||
+ 
+ 
+  20 = HMENU
+  20 {
+    special = directory
+    special.value = {$plugin.tx_basictpl.menu.footer.pid}
+    wrap = <ul class="menu"> | </ul>
+    1 = TMENU
+    1 {
+      noBlur = 1
+      NO.allStdWrap.insertData = 1
+      NO.allWrap = <li> | </li>
+      NO.ATagBeforeWrap = 1
+    }
+ 
+  }
+}
+
+plugin.tx_basictpl.lib.media.cycle = COA
+plugin.tx_basictpl.lib.media.cycle {
+  10 = TEXT
+  10.required = 1
+  10.wrap = <ul class="cycle">|</ul>
+  10.data = levelmedia:-1, slide
+  10.split {
+    token = ,
+    cObjNum = 1
+    1 {
+      10 = IMG_RESOURCE
+      10 {
+        file.width = 960c
+        file.height = 270c
+        file.import.current = 1
+        file.import = uploads/media/
+      }
+      wrap = <li><img src="|" /></li>
+    }
+  }
+}
+
+plugin.tx_basictpl.lib.media.singleImage = IMAGE
+plugin.tx_basictpl.lib.media.singleImage {
+  file = {$path.template}/img/pic-default.jpg
+  file.width = 960c
+  file.height = 270c
+  file.import = uploads/media/
+  file.import.data = levelmedia: -1, slide
+  file.import.listNum = 0
+  file.import.override.field = media
+}
+
+plugin.tx_basictpl.lib.menu.simple = HMENU
+plugin.tx_basictpl.lib.menu.simple {
+  1 = TMENU
+  1 {
+    noBlur = 1
+    expAll=1
+    wrap = <ul id="menu">|</ul>
+    NO.wrapItemAndSub = <li> | </li>
+    ACT = 1
+    ACT.wrapItemAndSub = <li class="active"> | </li>
+      
+    IFSUB=1
+    IFSUB{
+      wrapItemAndSub = <li class="menuparent">|</li>
+    }
+
+    ACTIFSUB = 1
+    ACTIFSUB {
+      wrapItemAndSub = <li class="menuparent active">|</li>
+    }
+
+      
+   }
+  
+  ### Zweite (Kopieren von erster Ebene) ###
+  2 < .1
+  2.wrap = <ul>|</ul>
+  
+  3 < .2
+
+}
+
+# taken from http://typo3blogger.de/sprach-menu/
+plugin.tx_basictpl.lib.menu.language = HMENU
+plugin.tx_basictpl.lib.menu.language {
+  # Ein Sprach-Menü wird erzeugt
+  special = language
+  # Reihenfolge und Auswahl der Sprachen im Menü
+  special.value = 0,1,2
+  special.normalWhenNoLanguage = 0
+  wrap = <ul id="language_switch">|</ul>
+  1 = TMENU
+  1 {
+    noBlur = 1
+    # Standard Sprachen
+    NO = 1
+    NO {
+      linkWrap = <li>|</li>
+      # Standard-Titel für den Link wäre Seitenttitel
+      # => anderer Text als Link-Text (Optionsschift)
+      stdWrap.override = <span>de</span> || <span>en</span> || <span>nl</span>
+      #stdWrap.override =
+      # Standardmäßige Verlinkung des Menüs ausschalten
+      # Da diese sonstige GET-Parameter nicht enthält
+      doNotLinkIt = 1
+      # Nun wird der Link mit den aktuellen GET-Parametern neu aufgebaut
+      stdWrap.typolink.parameter.data = page:uid
+      stdWrap.typolink.additionalParams = &L=0 || &L=1 || &L=2
+      stdWrap.typolink.addQueryString = 1
+      stdWrap.typolink.addQueryString.exclude = L,id,cHash,no_cache
+      stdWrap.typolink.addQueryString.method = GET
+      stdWrap.typolink.useCacheHash = 1
+      stdWrap.typolink.no_cache = 0
+      stdWrap.typolink.innerWrap = <span></span>
+      stdWrap.typolink.ATagParams = class=de title=Deutsch || class=en title=English || class=nl title=Niederländisch
+
+       }
+    
+    # Aktive Sprache
+    ACT < .NO
+    ACT.linkWrap = <li class="active">|</li>
+    # NO + Übersetzung nicht vorhanden
+    #USERDEF1 < .NO
+    #USERDEF1.stdWrap.typolink >
+    # ACT + Übersetzung nicht vorhanden
+    #USERDEF2 < .ACT
+    #USERDEF2.stdWrap.typolink >
+  }
+}
+";}}s:8:"tsconfig";a:1:{i:1;a:2:{s:13:"page_TSconfig";s:0:"";s:13:"user_TSconfig";s:5712:"#default on: click to enlarge
+TCAdefaults.tt_content.image_zoom = 1
+
+#frames
+TCEFORM.tt_content.section_frame.removeItems = 1,5,6,10,11,12,20,21,66
+TCEFORM.tt_content.section_frame {
+  addItems.50 = Frame Background
+  addItems.51 = Frame Borders Round
+  addItems.52 = Frame Gradient
+  addItems.53 = Frame Shadow
+  
+  addItems.61 = Frame-Column Background
+
+  addItems.100 = Togglebox Closed
+  addItems.101 = Togglebox Open
+}
+
+
+#Eingabefeld Inhalte
+RTE.default {
+
+  # Markup options (htmlArea RTE only)
+  enableWordClean = 1
+  removeTrailingBR = 1
+  removeComments = 1
+  #removeTags = center, font, o:p, sdfield, u
+  removeTagsAndContents = link, meta, script, style, title
+  
+  proc.entryHTMLparser_db.removeTags := removeFromList(u)
+  removeTags := removeFromList(u)  
+
+  # Hide infrequently used paragraph types in the paragraph type selector (formatblock button)
+  hidePStyleItems = h5,h6,pre,address,div
+
+  #showButtons = *
+  showButtons:=addToList(underline, left, center, right, justifyfull, fontsize, textcolor, bgcolor, textindicator, copy, cut, paste, pastetoggle, pastebehaviour, pasteastext)
+
+  showButtons:=removeFromList(textstyle, table, textindicator, showhelp)
+  
+  proc.entryHTMLparser_db.removeTags := removeFromList(u)
+}
+
+ 
+RTE.default {
+  classesAnchor:=addToList(button default)  
+  classesAnchor:=addToList(button info)
+  classesAnchor:=addToList(button download)
+  classesAnchor:=addToList(button telephone)
+  classesAnchor:=addToList(button mail)
+  classesAnchor:=addToList(button home)
+  classesAnchor:=addToList(button stats)  
+  classesAnchor:=addToList(button link)
+  classesAnchor:=addToList(button world)  
+}
+
+
+
+RTE.classesAnchor {
+  page_button_default.class = button default
+  page_button_default.type = page
+
+  page_button_info.class = button info
+  page_button_info.type = page
+
+  page_button_home.class = button home
+  page_button_home.type = page
+
+  page_button_download.class = button download
+  page_button_download.type = page
+  page_button_download.titleText = Download
+
+  page_button_telephone.class = button telephone
+  page_button_telephone.type = page
+
+  page_button_mail.class = button mail
+  page_button_mail.type = page
+  
+  page_button_world.class = button world
+  page_button_world.type = page  
+  
+  page_button_link.class = button link
+  page_button_link.type = page   
+  
+  page_button_stats.class = button stats
+  page_button_stats.type = page  
+
+  mail_button_default.class = button default
+  mail_button_default.type = mail
+
+  mail_button_info.class = button info
+  mail_button_info.type = mail
+
+  mail_button_home.class = button home
+  mail_button_home.type = mail
+
+  mail_button_download.class = button download
+  mail_button_download.type = mail
+  mail_button_download.titleText = Download
+
+  mail_button_telephone.class = button telephone
+  mail_button_telephone.type = mail
+
+  mail_buttonmail.class = button mail
+  mail_buttonmail.type = mail
+  
+  mail_button_world.class = button world
+  mail_button_world.type = mail  
+  
+  mail_button_link.class = button link
+  mail_button_link.type = mail   
+  
+  mail_button_stats.class = button stats
+  mail_button_stats.type = mail    
+  
+  url_button_default.class = button default
+  url_button_default.type = url
+
+  url_button_info.class = button info
+  url_button_info.type = url
+
+  url_button_home.class = button home
+  url_button_home.type = url
+
+  url_button_download.class = button download
+  url_button_download.type = url
+  url_button_download.titleText = Download
+
+  url_button_telephone.class = button telephone
+  url_button_telephone.type = url
+
+  url_buttonmail.class = button mail
+  url_buttonmail.type = url 
+  
+  url_button_world.class = button world
+  url_button_world.type = url  
+  
+  url_button_link.class = button link
+  url_button_link.type = url   
+  
+  url_button_stats.class = button stats
+  url_button_stats.type = url    
+  
+  file_button_default.class = button default
+  file_button_default.type = file
+
+  file_button_info.class = button info
+  file_button_info.type = file
+
+  file_button_home.class = button home
+  file_button_home.type = file
+
+  file_button_download.class = button download
+  file_button_download.type = file
+  file_button_download.titleText = Download
+
+  file_button_telephone.class = button telephone
+  file_button_telephone.type = file
+
+  file_buttonmail.class = button mail
+  file_buttonmail.type = file   
+
+  file_button_world.class = button world
+  file_button_world.type = file  
+  
+  file_button_link.class = button link
+  file_button_link.type = file   
+  
+  file_button_stats.class = button stats
+  file_button_stats.type = file  
+
+}
+
+
+RTE {
+   classes.lead {
+       name = Leading paragraph
+       value = font-size:1.4em;
+   }
+
+   default {
+       contentCSS = fileadmin/templates/css/rte.css
+proc.allowedClasses := addToList(lead)
+classesParagraph := addToList(lead) 
+   }
+}
+
+TCEFORM.tt_content.layout.addItems {
+  21 = List Layout 1
+  22 = List Layout 2
+  23 = List Layout 3
+  24 = List Layout 4
+  25 = List Layout 5
+  26 = List Layout 6
+  
+  41 = Box Default
+  42 = Box Error
+  43 = Boy Tick
+  44 = Box Info
+  45 = Box Warning
+
+  51 = Table Layout 1
+  52 = Table Layout 2
+  53 = Table Layout 3
+
+  61 = Submenu Layout 1
+  62 = Submenu Layout 2
+  63 = Submenu Layout 3
+  64 = Submenu Layout 4
+
+  71 = Table-Compare 1
+  72 = Table-Compare 2
+  73 = Table-Compare 3
+}
+
+
+
+#tx_multicolumn.config.advancedLayouts.makeEqualElementBoxHeight.includeFiles.jQuery >
+tx_multicolumn.config.advancedLayouts.makeEqualElementBoxHeight.includeFiles >
+";}}}

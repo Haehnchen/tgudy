@@ -1,0 +1,10 @@
+ul.vAccordion {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ul.vAccordion h5.effectBoxItemTitle {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}

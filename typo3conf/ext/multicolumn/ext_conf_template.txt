@@ -1,0 +1,2 @@
+# cat=basic; type=user[EXT:multicolumn/lib/class.tx_multicolumn_emconfhelper.php:tx_multicolumn_emconfhelper->checkCompatibility]; label=Compatibility check
+checkCompatibility=0

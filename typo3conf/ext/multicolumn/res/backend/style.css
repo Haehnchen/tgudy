@@ -1,0 +1,62 @@
+.clearfix:after {
+	clear:both;
+	content:".";
+	display:block;
+	font-size:0;
+	height:0;
+	visibility:hidden;
+}
+table.multicolumn {
+	width: 100%;
+	padding-top: 10px;
+	border: 1px solid #D7DBE2;
+}
+	table.multicolumn .column {
+		padding: 0 6px 0;
+		border-left: 1px solid #D7DBE2;
+	}
+	
+	table.multicolumn .column0 {
+		border-left: none;
+	}
+		table.multicolumn div.t3-page-colHeader {
+			visibility: visible;
+		}
+		table.multicolumn .innerContent {
+			padding: 0;
+		}
+		ul.contentElements {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+		}
+		ul.contentElements li.contentElement {
+			margin-top: 15px;
+			border-width: 1px 0 0;
+			border-style: solid;
+			border-color: #D7DBE2;
+		}
+		ul.contentElements li.item0 {
+			margin-top: 0;
+			border: none;
+		}
+
+div.lostContentElementContainer {
+	padding: 20px;
+	border: 1px solid #D7DBE2;
+}
+	/* reset unusable max-width */
+td.t3-page-column {
+	max-width: inherit;
+}
+
+	/* set TYPO3 4.4 special styles temporary solution for two levels*/
+.t3-page-ce.active ul.contentElements .t3-row-header,
+.t3-page-ce.active ul.contentElements ul.contentElements .t3-row-header {
+	visibility: hidden;
+}
+.t3-page-ce.active table.multicolumn .t3-page-colHeader,
+ul.contentElements .t3-page-ce.active .t3-row-header,
+ul.contentElements ul.contentElements .t3-page-ce.active .t3-row-header{
+	visibility: visible;
+}

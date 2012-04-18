@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'multicolumn'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_multicolumn_multicolumn">Multicolumn</label>
+			<label index="tt_content.tx_multicolumn_parentid">Multicolumn Container</label>
+			<label index="tt_content.tx_multicolumn_tab.config">Configuration</label>
+			<label index="tt_content.tx_multicolumn_preSetLayout">Preset Layouts</label>
+			<label index="tt_content.tx_multicolumn_columns">Number of Columns</label>
+			<label index="tt_content.tx_multicolumn_advanced">Advanced Layouts</label>
+			<label index="tt_content.tx_multicolumn_containerwidth">Total width of container</label>
+			<label index="tt_content.tx_multicolumn_columnwidth">Column width</label>
+			<label index="tt_content.tx_multicolumn_dimensionmeasure.container">Measure for container</label>
+			<label index="tt_content.tx_multicolumn_dimensionmeasure.column">Measure for column</label>
+			<label index="tt_content.tx_multicolumn_dimensionmeasure.percent">Percent</label>
+			<label index="tt_content.tx_multicolumn_dimensionmeasure.pixel">Pixel</label>
+			<label index="tt_content.tx_multicolumn_columnmargin">Column margin</label>
+			<label index="tt_content.tx_multicolumn_columnpadding">Column padding</label>
+			<label index="tt_content.tx_multicolumn_layout">Layout</label>
+			<label index="tt_content.tx_multicolumn_disableimageshrink">Disable automatic image shrink</label>
+			<label index="tt_content.tx_multicolumn_makeEqualElementBoxHeight">Force equal height for each multicolumn item</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="tx_multicolumn_multicolumn">Multispalten Container</label>
+			<label index="tt_content.tx_multicolumn_parentid">Multispalten Container</label>
+			<label index="tt_content.tx_multicolumn_tab.config">Konfiguration</label>
+			<label index="tt_content.tx_multicolumn_preSetLayout">Vordefinierte Layouts</label>
+			<label index="tt_content.tx_multicolumn_columns">Anzahl spalten</label>
+			<label index="tt_content.tx_multicolumn_advanced">Erweiterte Layouts</label>
+			<label index="tt_content.tx_multicolumn_containerwidth">Containerbreite</label>
+			<label index="tt_content.tx_multicolumn_columnwidth">Spaltenbreite</label>
+			<label index="tt_content.tx_multicolumn_dimensionmeasure.container">Masseinheit des Containers</label>
+			<label index="tt_content.tx_multicolumn_dimensionmeasure.column">Masseinheit der Spalte</label>
+			<label index="tt_content.tx_multicolumn_dimensionmeasure.percent">Prozent</label>
+			<label index="tt_content.tx_multicolumn_dimensionmeasure.pixel">Pixel</label>
+			<label index="tt_content.tx_multicolumn_columnmargin">Spaltenabstand</label>
+			<label index="tt_content.tx_multicolumn_columnpadding">Spaltenpadding</label>
+			<label index="tt_content.tx_multicolumn_layout">Layout</label>
+			<label index="tt_content.tx_multicolumn_disableimageshrink">Automatisches Bild skalieren deaktivieren</label>
+			<label index="tt_content.tx_multicolumn_makeEqualElementBoxHeight">Erzwinge gleiche Höhe für jedes Multicolumn Element</label>
+		</languageKey>
+	</data>
+</T3locallang>

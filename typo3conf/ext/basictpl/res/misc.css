@@ -1,0 +1,352 @@
+body.verdana , .verdana caption, .verdana th, .verdana td, .verdana input, .verdana textarea, .verdana select, .verdana option, .verdana legend, .verdana fieldset {
+  font-family: Verdana,Tahoma,"DejaVu Sans",sans-serif;
+}
+
+body.arial , .arial caption, .arial th, .arial td, .arial input, .arial textarea, .arial select, .arial option, .arial legend, .arial fieldset {
+  font-family: Arial, droid, "Nimbus Sans L", sans-serif;
+}
+
+body.georgia , .georgia caption, .georgia th, .georgia td, .georgia input, .georgia textarea, .georgia select, .georgia option, .georgia legend, .georgia fieldset {
+  font-family: Georgia, "Times New Roman", "DejaVu Serif", serif;
+}
+
+body.helvetica , .helvetica caption, .helvetica th, .helvetica td, .helvetica input, .helvetica textarea, .helvetica select, .helvetica option, .helvetica legend, .helvetica fieldset {
+  font-family: Helvetica, Arial, "Nimbus Sans L", sans-serif;
+}
+
+body.droid , .droid caption, .droid th, .droid td, .droid input, .droid textarea, .droid select, .droid option, .droid legend, .droid fieldset {
+  font-family: 'Droid Sans', sans-serif;
+}
+
+body.times , .times caption, .times th, .times td, .times input, .times textarea, .times select, .times option, .times legend, .times fieldset {
+  font-family: Times, "Times New Roman", Georgia, "DejaVu Serif", serif;
+}
+
+body.ptsans , .ptsans caption, .ptsans th, .ptsans td, .ptsans input, .ptsans textarea, .ptsans select, .ptsans option, .ptsans legend, .ptsans fieldset {
+  font-family: 'PT Sans', sans-serif;
+}
+
+body.istok , .istok caption, .istok th, .istok td, .istok input, .istok textarea, .istok select, .istok option, .istok legend, .istok fieldset {
+  font-family: 'Istok Web', sans-serif;
+}
+
+
+
+
+#header-cycle {
+  list-style:none;
+  margin:0; padding:0;
+}
+
+#header-cycle-wrapper {
+  position:relative;  
+  
+  top:0;
+	
+	overflow:hidden;
+}
+
+#header-cycle li {
+  margin:0; padding:0;
+}
+
+#header-cycle-nav {
+  position:absolute;
+  bottom:0px;
+  right:0px;
+  z-index:50;
+}
+
+#header-cycle-nav a {
+  background:transparent url(img/leaf_sprites.png) no-repeat;
+  display:block;
+  width:22px;
+	height:20px;
+  float:left;
+  text-indent:-1000px;
+  overflow:hidden;
+  background-position: 0 -1848px;
+}
+
+#header-cycle-nav a.activeSlide {
+  background-position: 0 -1914px;
+}
+
+#header-cycle li {
+  display:none;
+}
+
+#header-cycle li:first-child {
+  display:block;
+}
+
+/* breadcrumbs */
+#breadcrumbs-wrapper {
+  border-bottom:1px solid #F2F2F2;
+  border-bottom:1px solid rgba(0,0,0, 0.05);
+}
+
+#breadcrumbs, #breadcrumbs a {
+  font-size:0.875em;
+  color:#808080;
+  text-decoration:none;
+}
+
+#breadcrumbs a {
+  display:block;
+  float:left;
+  background:transparent url(img/crumbs.png) no-repeat right center;
+  padding:0 15px 0 0;
+  padding-left:10px;
+}
+
+#breadcrumbs a:first-child {
+  padding-left:5px;
+}
+
+#breadcrumbs a:hover {
+  color:#e1e1e1;
+}
+
+#breadcrumbs .active {
+  text-decoration:none;
+  background:none;
+  color:#d4d4d4;
+}
+
+/* footer menu */
+#footer-inner {
+	margin-top:15px;
+}
+
+#footer-wrapper {
+  background: #F6F6F2;
+  background: rgba(255,255,255, 0.92);
+  border-top:1px solid white;
+}
+
+#footer {
+  font-size:12px;
+  padding-bottom:2em;
+}
+
+#footer h1,
+#footer h2,
+#footer h3,
+#footer h4 {
+	color:#666666;
+}
+
+#footer .background  {
+  background-color:white;
+  
+	-webkit-box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+	
+  margin-bottom:10px;
+}
+
+
+.bx-prev {
+  background:transparent url(img/nextprev.png) 0 0 no-repeat;
+  width:28px;
+  height:24px;
+  display:block;
+  text-indent:1000px;
+  overflow:hidden;
+  float:left;
+}
+ 
+.bx-next {
+  width:28px;
+  height:24px;
+  display:block;
+  background:transparent url(img/nextprev.png) -26px 0 no-repeat;
+  float:right;
+  text-indent:1000px;
+  overflow:hidden;
+}
+
+.bx-next:hover {
+  background:transparent url(img/nextprev.png) -26px -22px no-repeat;
+}
+
+.bx-prev:hover {
+  background:transparent url(img/nextprev.png) 0 -22px no-repeat;
+}
+
+
+.bx-prev {
+	position:relative;
+	top:-140px;
+	left:-60px;
+ }
+ 
+.bx-next {
+ 	position:relative;
+	top:-140px;
+	right:-60px;
+ }
+ 
+ #slider .csc-textpic-intext-left-nowrap .csc-textpic-text {
+	padding-left:10px;
+	padding-top:30px;
+ }
+ 
+ #slider .csc-textpic-intext-right-nowrap .csc-textpic-text {
+	padding-right:10px;
+	padding-top:30px;
+ }
+
+/* tt_news */
+
+.news-list-container {
+  padding:0;
+}
+
+.news-single-item {
+  margin:0;padding:0;
+}
+
+.news-single-img {
+margin: 0 0 0 10px;
+}
+
+.news-single-item .header h2 {
+  font-size:1em;
+  font-weight:normal;
+  font-style:italic;
+  margin: 0.375em 0 0.75em;
+  color:#808080;
+}
+
+.news-meta {
+  border-bottom: 1px dashed #E1E1E1;
+  font-size:0.875em;
+}
+
+.news-meta .date {
+  float:right;
+}
+
+
+
+.news-latest-container {
+  padding:0;
+}
+
+.news-latest-container a {
+  text-decoration:none;
+}
+
+.news-latest-item {
+  padding:0;
+  border-top: 1px dashed #E1E1E1;
+  padding: 10px 0;
+}
+
+.news-latest-item h2 {
+  font-size:0.875em;
+  padding:0;
+  font-weight:normal;
+  padding: 5px 0 0;
+}
+.news-latest-item .news-meta-latest {
+  font-size:0.813em;
+}
+
+.news-latest-item img {
+  margin: 0 10px 5px 0;
+}
+
+.news-latest-container .news-latest-item:first-child {
+  border-top:none;
+  padding:0 0 10px 0;
+}
+
+/* list */
+
+.news-list-item {
+  /* border-top: 1px dashed #E1E1E1; */
+  padding: 0 0 20px;
+
+}
+
+.news-list-item:first-child {
+  border:none;
+}
+
+.news-list-item h2 {
+  font-weight:normal;
+  margin-bottom:0.3em;
+}
+.news-list-item a {
+  color:#2E3337;
+  text-decoration:none;
+}
+.news-list-item .news-meta {
+  margin-bottom:0.5em;
+}
+
+.news-list-item .news-list-morelink {
+  display:block;
+  padding:0;
+  margin-top:1.5em;
+
+}
+
+.news-list-item .news-list-morelink a:hover {
+  background-color:#D1D1D1;
+}
+
+/* search */
+.tx-indexedsearch-searchbox.toggle-box {
+  border-bottom:0;
+}
+
+.tx-indexedsearch .tx-indexedsearch-res TD.tx-indexedsearch-descr {
+  font-style:normal;
+}
+
+.tx-indexedsearch-browsebox, .tx-indexedsearch-whatis {
+  text-align:center;
+}
+.tx-indexedsearch .tx-indexedsearch-whatis {
+  margin:0; padding:0;
+  font-size:1.125em;
+  margin-top:1em;
+}
+
+#image-wrapper,#image2 {
+
+}
+
+#image2 {
+	/* background:transparent url(img/overlay_1.png) top center no-repeat; */
+	/* background-position:100px 100px; */
+}
+
+#header-title-wrapper h1 {
+	color:white;
+	
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
+	opacity:0.9;
+
+}
+
+#header-title-wrapper h2 {
+	margin-top:0.3em;
+	font-size:14px;
+  color:white;
+
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+	opacity:0.5;
+
+}
+
+#header-title-wrapper .icon {
+	float:right;
+}

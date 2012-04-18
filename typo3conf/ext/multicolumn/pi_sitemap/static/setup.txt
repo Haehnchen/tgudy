@@ -1,0 +1,54 @@
+temp.tt_content.sitemapRenderObj < tt_content.menu.20.3.renderObj
+
+# expand sitemap
+plugin.tx_multicolumn_pi_sitemap {
+	multicolumnContainerUid.field = uid
+	
+	sitemapItem = CASE
+	sitemapItem {
+		key.field = CType
+		default < temp.tt_content.sitemapRenderObj
+		
+		multicolumn = < plugin.tx_multicolumn_pi_sitemap
+
+	}
+	
+	sitemapList = TEXT
+	sitemapList {
+		field = sitemapItem
+		required = 1
+		wrap = <ul class="multicolumnSitemapitem csc-menu csc-menu-3">|</ul>
+	}
+}
+
+tt_content {
+	menu {
+		20 {
+			3 < styles.content.get
+			3 {
+				wrap = <ul class="csc-menu csc-menu-3">|</ul>
+				renderObj = COA
+				renderObj {
+					wrap < temp.tt_content.sitemapRenderObj.wrap
+					
+						# default rendering
+					10 < temp.tt_content.sitemapRenderObj
+					10 {
+						wrap >
+					}
+					
+						# multicolum containers
+					20 = COA
+					20 {
+						if {
+							value = multicolumn
+							equals.field = CType
+						}
+						
+						10 = < plugin.tx_multicolumn_pi_sitemap
+					}
+				}
+			}
+		}
+	}
+}

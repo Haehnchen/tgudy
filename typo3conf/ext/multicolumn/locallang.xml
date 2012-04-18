@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for extension 'multicolumn'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="pi1_title">Multicolumn Container</label>
+			<label index="pi1_plus_wiz_description">This content element allows you to create dynamic columns.</label>
+			<label index="cms_layout.effectBox">Effect Box column</label>
+			<label index="cms_layout.columnTitle">Column</label>
+			<label index="cms_layout.lostElements.title">Lost contentelements</label>
+			<label index="cms_layout.lostElements.message">Following elements has no relation to a multicolumn column. You can edit the element and switch to an other column or simply cut and paste with the element context menu.</label>
+			<label index="cms_layout.deleteWarning">(This multicolumn container has %s content element(s) which will be deleted, too!)</label>
+			<label index="multicolumColumn">Multicolumn column:</label>
+			<label index="multicolumColumn.clickmenu">column</label>
+			<label index="emconfhelper.xclass.title">Uppps! There seems to be a conflict with</label>
+			<label index="emconfhelper.xclass.message">uses a XCLASS to overwrite TYPO3 core functions. In order to use the Multicolumn extension please deactivate the XCLASS or uninstall</label>
+			<label index="emconfhelper.ok.title">Ready to go</label>
+			<label index="emconfhelper.ok.message">The compatibility check was successfully. Your TYPO3 installation is ready for the Multicolumn extension.</label>
+			<label index="emconfhelper.templavoila.title">Multicolumn doesn't work with Templavoila</label>
+			<label index="emconfhelper.templavoila.message">You can't use the multicolumn content element with Templavoila. Use the classic page modul instead.</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="pi1_title">Mehrspalten Container</label>
+			<label index="cms_layout.effectBox">Effekt Box Spalte</label>
+			<label index="pi1_plus_wiz_description">Diese Element ermöglicht eine Darstellung von Inhaltselementen über mehrere Spalten.</label>
+			<label index="cms_layout.columnTitle">Spalte</label>
+			<label index="cms_layout.deleteWarning">(Dieser Mehrspaltencontainer hat %s Inhalts-Element(e), welche ebenfalls gelöscht werden!)</label>
+			<label index="cms_layout.lostElements.title">Spaltenlose Inhaltselmente</label>
+			<label index="cms_layout.lostElements.message">Folgende Inhaltselemente gehören keiner Spalte an. Sie können das Inhaltselement bearbeiten und einer neuen Spalte zuweisen oder mit dem Element-Kontext-Menu verschieben.</label>
+			<label index="multicolumColumn">Multispalte:</label>
+			<label index="multicolumColumn.clickmenu">Spalte</label>
+			
+			<label index="emconfhelper.title">Uppsala! Es besteht ein Konflikt mit der Erweiterung</label>
+		</languageKey>
+	</data>
+</T3locallang>

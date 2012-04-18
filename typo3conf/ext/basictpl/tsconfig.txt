@@ -1,0 +1,221 @@
+#default on: click to enlarge
+TCAdefaults.tt_content.image_zoom = 1
+
+#frames
+TCEFORM.tt_content.section_frame.removeItems = 1,5,6,10,11,12,20,21,66
+TCEFORM.tt_content.section_frame {
+  addItems.50 = Frame Background
+  addItems.51 = Frame Borders Round
+  addItems.52 = Frame Gradient
+  addItems.53 = Frame Shadow
+  
+  addItems.61 = Frame-Column Background
+
+  addItems.100 = Togglebox Closed
+  addItems.101 = Togglebox Open
+}
+
+#tt_news clear cache (add page id with news; commas can use)
+#put 'options.clearCache.all = 1' in user/group tsconfig to allow
+#TCEMAIN.clearCacheCmd = 49
+
+RTE.default {
+
+  # Markup options (htmlArea RTE only)
+  enableWordClean = 1
+  removeTrailingBR = 1
+  removeComments = 1
+  #removeTags = center, font, o:p, sdfield, u
+  removeTagsAndContents = link, meta, script, style, title
+  
+  proc.entryHTMLparser_db.removeTags := removeFromList(u)
+  removeTags := removeFromList(u)  
+
+  # Hide infrequently used paragraph types in the paragraph type selector (formatblock button)
+  hidePStyleItems = h5,h6,pre,address,div
+
+  #showButtons = *
+  showButtons:=addToList(underline, left, center, right, justifyfull, fontsize, textcolor, bgcolor, textindicator, copy, cut, paste, pastetoggle, pastebehaviour, pasteastext)
+
+  showButtons:=removeFromList(textstyle, table, textindicator, showhelp)
+  
+  proc.entryHTMLparser_db.removeTags := removeFromList(u)
+	
+	buttons.pastetoggle.setActiveOnRteOpen = 1
+}
+
+ 
+RTE.default {
+  classesAnchor:=addToList(button default)  
+  classesAnchor:=addToList(button info)
+  classesAnchor:=addToList(button download)
+  classesAnchor:=addToList(button telephone)
+  classesAnchor:=addToList(button mail)
+  classesAnchor:=addToList(button home)
+  classesAnchor:=addToList(button stats)  
+  classesAnchor:=addToList(button link)
+  classesAnchor:=addToList(button world)  
+}
+
+
+
+RTE.classesAnchor {
+  page_button_default.class = button default
+  page_button_default.type = page
+
+  page_button_info.class = button info
+  page_button_info.type = page
+
+  page_button_home.class = button home
+  page_button_home.type = page
+
+  page_button_download.class = button download
+  page_button_download.type = page
+  page_button_download.titleText = Download
+
+  page_button_telephone.class = button telephone
+  page_button_telephone.type = page
+
+  page_button_mail.class = button mail
+  page_button_mail.type = page
+  
+  page_button_world.class = button world
+  page_button_world.type = page  
+  
+  page_button_link.class = button link
+  page_button_link.type = page   
+  
+  page_button_stats.class = button stats
+  page_button_stats.type = page  
+
+  mail_button_default.class = button default
+  mail_button_default.type = mail
+
+  mail_button_info.class = button info
+  mail_button_info.type = mail
+
+  mail_button_home.class = button home
+  mail_button_home.type = mail
+
+  mail_button_download.class = button download
+  mail_button_download.type = mail
+  mail_button_download.titleText = Download
+
+  mail_button_telephone.class = button telephone
+  mail_button_telephone.type = mail
+
+  mail_buttonmail.class = button mail
+  mail_buttonmail.type = mail
+  
+  mail_button_world.class = button world
+  mail_button_world.type = mail  
+  
+  mail_button_link.class = button link
+  mail_button_link.type = mail   
+  
+  mail_button_stats.class = button stats
+  mail_button_stats.type = mail    
+  
+  url_button_default.class = button default
+  url_button_default.type = url
+
+  url_button_info.class = button info
+  url_button_info.type = url
+
+  url_button_home.class = button home
+  url_button_home.type = url
+
+  url_button_download.class = button download
+  url_button_download.type = url
+  url_button_download.titleText = Download
+
+  url_button_telephone.class = button telephone
+  url_button_telephone.type = url
+
+  url_buttonmail.class = button mail
+  url_buttonmail.type = url 
+  
+  url_button_world.class = button world
+  url_button_world.type = url  
+  
+  url_button_link.class = button link
+  url_button_link.type = url   
+  
+  url_button_stats.class = button stats
+  url_button_stats.type = url    
+  
+  file_button_default.class = button default
+  file_button_default.type = file
+
+  file_button_info.class = button info
+  file_button_info.type = file
+
+  file_button_home.class = button home
+  file_button_home.type = file
+
+  file_button_download.class = button download
+  file_button_download.type = file
+  file_button_download.titleText = Download
+
+  file_button_telephone.class = button telephone
+  file_button_telephone.type = file
+
+  file_buttonmail.class = button mail
+  file_buttonmail.type = file   
+
+  file_button_world.class = button world
+  file_button_world.type = file  
+  
+  file_button_link.class = button link
+  file_button_link.type = file   
+  
+  file_button_stats.class = button stats
+  file_button_stats.type = file  
+
+}
+
+
+TCEFORM.tt_content.layout.addItems {
+  21 = List Layout 1
+  22 = List Layout 2
+  23 = List Layout 3
+  24 = List Layout 4
+  25 = List Layout 5
+  26 = List Layout 6
+  
+  41 = Box Default
+  42 = Box Error
+  43 = Boy Tick
+  44 = Box Info
+  45 = Box Warning
+
+  51 = Table Layout 1
+  52 = Table Layout 2
+  53 = Table Layout 3
+
+  61 = Submenu Layout 1
+  62 = Submenu Layout 2
+  63 = Submenu Layout 3
+  64 = Submenu Layout 4
+  65 = Submenu Layout 5 
+
+  71 = Table-Compare 1
+  72 = Table-Compare 2
+  73 = Table-Compare 3
+	
+  81 = Header / Splitter 1
+  82 = Header / Splitter 2
+  83 = Header / Splitter 3
+  84 = Header / Splitter 4
+
+	
+  91 = Postit 1
+  92 = Postit 2
+  93 = Postit 3
+  94 = Postit 4
+  95 = Postit 5
+  96 = Postit 6
+  97 = Postit 7	
+}
+
+tx_multicolumn.config.advancedLayouts.makeEqualElementBoxHeight.includeFiles >

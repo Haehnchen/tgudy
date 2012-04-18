@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>Language labels for plugin &quot;multicolumn&quot;</description>
+		<type></type>
+		<csh_table></csh_table>
+		<labelContext type="array"></labelContext>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="error.typoscript.title">Multicolumn-Typoscript is missing!</label>
+			<label index="error.typoscript.message">Please include Multicolumn Typoscript. Go to template modul section and include static file Multicolumn</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="error.typoscript.title">Multicolumn-Typoscript fehlt!</label>
+			<label index="error.typoscript.message">Bitte Multicolumn Typoscript inkludieren. Du kannst im Voralge-Modul im Bereich "Includes -> Include static (from extensions)" das Multicolum Typoscript hinzufügen.</label>
+		</languageKey>
+	</data>
+</T3locallang>

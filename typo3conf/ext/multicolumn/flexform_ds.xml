@@ -1,0 +1,205 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<preSetLayout>
+			<ROOT>	
+				<TCEforms>
+					<sheetTitle>LLL:EXT:multicolumn/locallang_db.xml:tt_content.tx_multicolumn_preSetLayout</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<layoutKey>
+						<TCEforms>
+							<label>LLL:EXT:multicolumn/locallang_db.xml:tt_content.tx_multicolumn_layout</label>
+							<config>
+								<type>select</type>
+								<requestUpdate>1</requestUpdate>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0"></numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+								</items>
+								<txMulitcolumnField>preSetLayout</txMulitcolumnField>
+								<itemsProcFunc>EXT:multicolumn/lib/class.tx_multicolumn_flexform.php:tx_multicolumn_flexform->addFieldsToFlexForm</itemsProcFunc>
+							</config>
+						</TCEforms>
+					</layoutKey>
+				</el>
+			</ROOT>
+		</preSetLayout>
+		<advancedLayout>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:multicolumn/locallang_db.xml:tt_content.tx_multicolumn_advanced</sheetTitle>
+					<cshFile>LLL:EXT:multicolumn/locallang_csh_flexform.xml</cshFile>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<columns>
+						<TCEforms>
+							<label>LLL:EXT:multicolumn/locallang_db.xml:tt_content.tx_multicolumn_columns</label>
+							<config>
+								<type>input</type>
+								<size>2</size>
+								<eval>trim,int,tx_multicolumn_tce_eval</eval>
+							</config>
+						</TCEforms>
+					</columns>
+					<containerMeasure>
+						<TCEforms>
+							<label>LLL:EXT:multicolumn/locallang_db.xml:tt_content.tx_multicolumn_dimensionmeasure.container</label>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0"></numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:multicolumn/locallang_db.xml:tt_content.tx_multicolumn_dimensionmeasure.percent</numIndex>
+										<numIndex index="1">%</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:multicolumn/locallang_db.xml:tt_content.tx_multicolumn_dimensionmeasure.pixel</numIndex>
+										<numIndex index="1">px</numIndex>
+									</numIndex>
+								</items>
+								<maxitems>1</maxitems>
+								<size>1</size>
+							</config>
+						</TCEforms>
+					</containerMeasure>
+					<containerWidth>
+						<TCEforms>
+							<label>LLL:EXT:multicolumn/locallang_db.xml:tt_content.tx_multicolumn_containerwidth</label>
+							<config>
+								<type>input</type>
+								<size>3</size>
+							</config>
+						</TCEforms>
+					</containerWidth>
+					
+					<columnMeasure>
+						<TCEforms>
+							<label>LLL:EXT:multicolumn/locallang_db.xml:tt_content.tx_multicolumn_dimensionmeasure.column</label>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0"></numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:multicolumn/locallang_db.xml:tt_content.tx_multicolumn_dimensionmeasure.percent</numIndex>
+										<numIndex index="1">%</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:multicolumn/locallang_db.xml:tt_content.tx_multicolumn_dimensionmeasure.pixel</numIndex>
+										<numIndex index="1">px</numIndex>
+									</numIndex>
+								</items>
+								<maxitems>1</maxitems>
+								<size>1</size>
+							</config>
+						</TCEforms>
+					</columnMeasure>
+					<columnWidth>
+						<TCEforms>
+							<label>LLL:EXT:multicolumn/locallang_db.xml:tt_content.tx_multicolumn_columnwidth</label>
+							<config>
+								<type>input</type>
+								<size>40</size>
+							</config>
+						</TCEforms>
+					</columnWidth>
+					<columnPadding>
+						<TCEforms>
+							<label>LLL:EXT:multicolumn/locallang_db.xml:tt_content.tx_multicolumn_columnpadding</label>
+							<config>
+								<type>input</type>
+								<size>40</size>
+							</config>
+						</TCEforms>
+					</columnPadding>
+					<columnMargin>
+						<TCEforms>
+							<label>LLL:EXT:multicolumn/locallang_db.xml:tt_content.tx_multicolumn_columnmargin</label>
+							<config>
+								<type>input</type>
+								<size>40</size>
+							</config>
+						</TCEforms>
+					</columnMargin>
+					
+					<disableImageShrink>
+						<TCEforms>
+							<label>LLL:EXT:multicolumn/locallang_db.xml:tt_content.tx_multicolumn_disableimageshrink</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</disableImageShrink>
+					<makeEqualElementBoxHeight>
+						<TCEforms>
+							<label>LLL:EXT:multicolumn/locallang_db.xml:tt_content.tx_multicolumn_makeEqualElementBoxHeight</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</makeEqualElementBoxHeight>
+				</el>
+			</ROOT>
+		</advancedLayout>
+		<effectBox>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:multicolumn/res/effects/locallang.xml:effectBox</sheetTitle>
+					<cshFile>LLL:EXT:multicolumn/locallang_csh_flexform.xml</cshFile>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<effect>
+						<TCEforms>
+							<label>LLL:EXT:multicolumn/res/effects/locallang.xml:effectBox.effect</label>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0"></numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+								</items>
+								<itemsProcFunc>EXT:multicolumn/lib/class.tx_multicolumn_flexform.php:tx_multicolumn_flexform->addFieldsToFlexForm</itemsProcFunc>
+								<maxitems>1</maxitems>
+								<size>1</size>
+								<txMulitcolumnField>effect</txMulitcolumnField>
+							</config>
+						</TCEforms>
+					</effect>
+					<effectOptions>
+						<TCEforms>
+							<label>LLL:EXT:multicolumn/res/effects/locallang.xml:effectBox.effectOptions</label>
+							<config>
+								<type>text</type>
+								<cols>48</cols>
+								<rows>5</rows>
+							</config>
+						</TCEforms>
+					</effectOptions>
+					<effectBoxWidth>
+						<TCEforms>
+							<label>LLL:EXT:multicolumn/res/effects/locallang.xml:effectBox.width</label>
+							<config>
+								<type>input</type>
+								<size>40</size>
+							</config>
+						</TCEforms>
+					</effectBoxWidth>
+				</el>
+			</ROOT>
+		</effectBox>
+	</sheets>
+</T3DataStructure>

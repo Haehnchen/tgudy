@@ -1,0 +1,92 @@
+/* Sudo Slider */
+
+.sudoSlider ul.effectBoxList,
+.sudoSlider ul.effectBoxList li.effectBoxItem {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.sudoSlider ul li.effectBoxItem { 
+	/* 
+		define width and height of list item (slide)
+		entire slider area will adjust according to the parameters provided here
+		comment the height out, if autoheight is on. 
+	*/ 
+	overflow:hidden; 
+	position:relative;
+}
+.sudoSlider, .sudoSlider2 {
+	width:100%;
+	overflow:hidden; 
+}
+
+
+/* numeric controls */
+.sudoControls .graphic,
+.sudoControls .prevBtn,
+.sudoControls .nextBtn {
+	margin:0;
+	padding:0;
+	display:block;
+	overflow:hidden;
+	text-indent:-8000px;
+}
+
+.sudoControls .prevBtn,
+.sudoControls .nextBtn { 
+	display:block;
+	width:30px;
+	height:77px;
+	position:absolute;
+	left:-30px;
+	top:71px;
+	z-index:1000;
+	background:url(images/btn_prev.gif) no-repeat 0 0;
+	cursor:pointer;
+}	
+.sudoControls .nextBtn { 
+	left:696px;
+}
+.sudoControls .nextBtn { 
+	background:url(images/btn_next.gif) no-repeat 0 0;
+}
+.sudoControls #wrapper .prevBtn{ 
+	left:-35px;
+}
+
+.sudoControls ol {
+	margin:1em 0;
+	padding:0;
+	height:28px;
+}
+.sudoControls ol li{
+	margin:0 10px 0 0; 
+	padding:0;
+	float:left;
+	list-style:none;
+	height:28px;
+	line-height:28px;
+}
+.sudoControls ol li a{
+	float:left;
+	height:28px;
+	line-height:28px;
+	border:1px solid #ccc;
+	background:#DAF3F8;
+	color:#555;
+	padding:0 10px;
+	text-decoration:none;
+}
+.sudoControls ol li.current a{
+	background:#5DC9E1;
+	color:#fff;
+}
+
+/* fadingTab2 */
+.sudoSliderTabFade2 .effectBoxText {
+	position:absolute;
+	bottom:0;
+	right:20px;
+	background:#fff;
+	padding:2px 20px;
+}

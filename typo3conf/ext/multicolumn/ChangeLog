@@ -1,0 +1,219 @@
+(add new changes on top of this file)
+2011-06-08 Michael Birchler  <mbirchler@snowflake.ch>
+	* Added support for TYPO3 4.5 gridviews (thx to Marc Bastian Heinrichs)
+	
+2011-05-30 Michael Birchler  <mbirchler@snowflake.ch>
+	* Added support for cObj:parentRecordNumber
+	
+2011-05-03 Michael Birchler  <mbirchler@snowflake.ch>
+	* Added effectBox possibility to crop images from css string
+	
+2011-04-21 Michael Birchler  <mbirchler@snowflake.ch>
+	* Added support for sitemap element (Section index (pagecontent w/Index checked)
+	* Added fe_group to multicolumn content elements
+	
+2011-04-15 Michael Birchler  <mbirchler@snowflake.ch>
+	* Add tx_multicolumn_parentid to $GLOBALS['TCA']['tt_content']['palettes'][4] if present
+	* Fixed inclusion of layoutCss from TSconfig
+	
+2011-03-16 Michael Birchler  <mbirchler@snowflake.ch>
+	* Fixed: Respect $TYPO3_CONF_VARS['BE']['explicitADmode'] = 'explicitAllow';
+	
+2011-02-07 Michael Birchler  <mbirchler@snowflake.ch>
+	
+	* Fixed #12644: multicolumn container dropdown works again with TYPO3 4.5. Thanks to Stephan Gruber for providing the patch.
+	
+2011-01-19 Michael Birchler  <mbirchler@snowflake.ch>
+	
+	* Changed: Adapted TypoScript to be TYPO3 4.5 compliant 
+	
+2011-01-19 Michael Birchler  <mbirchler@snowflake.ch>
+	
+	* Fixed: Cut a content element to a multicolumn content element didn't work on all circumstances
+	
+2011-01-13 Michael Birchler  <mbirchler@snowflake.ch>
+	
+	* Changed: the css property for equal height for each contentelement is now min-height instead height
+	
+2011-01-07 Michael Birchler  <mbirchler@snowflake.ch>
+	
+	* Fixed: classic feedit (Thanks to Markus Zuercher)
+	* Fixed: Check for cObj properly in backend context
+	
+2010-12-13 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Fixed: Display icon in CType selector
+	* Added: possibility to enable only specifc layouts (TSConfig: tx_multicolumn.config.layoutPreset.enableLayouts)
+	
+2010-12-10 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Added: possibility to enable only specifc effects (TSConfig: tx_multicolumn.config.effectBox.enableEffects)
+	* Fixed: Force equal height for each multicolumn item only affects checked multicolumn container 
+
+2010-12-07 Michael Birchler  <mbirchler@snowflake.ch>
+	
+	* Fixed: Use spritemanager to display custom multicolumn type icon
+	* Fixed: Added check for $dataStructArray['sheets']
+	* Fixed: 3 column layout. thx to webwaren.ch
+	
+2010-12-03 Cornel Boppart  <cboppart@snowflake.ch>
+	
+	* Optimized: Browser Compatibility of Accordion Effect
+	
+2010-12-03 Pascal Fuchser  <pfuchser@snowflake.ch>
+
+	* Changed: Setup Code for easyAccordion effect
+	* Changed: Label for CSS Style
+	* Added: Description for effect fields
+
+2010-12-02 Cornel Boppart  <cboppart@snowflake.ch>
+
+	* Added: New Effect
+	
+2010-12-01 Pascal Fuchser  <pfuchser@snowflake.ch>
+
+	* Added: New Effect
+
+2010-12-01 Michael Birchler  <mbirchler@snowflake.ch>
+	
+	* Fixed: XCLASS warning for dam_ttcontent
+	
+2010-11-10 Michael Birchler  <mbirchler@snowflake.ch>
+	
+	* Fixed: #9900
+	* Added: Hook for css / js inclusion
+	* Added: Possibilty to force equal height for each multicolumn item
+	
+2010-10-28 Michael Birchler  <mbirchler@snowflake.ch>
+	
+	* Changed: Don't make localCobj
+	
+2010-10-06 Michael Birchler  <mbirchler@snowflake.ch>
+	
+	* Added: Effectbox
+	
+2010-09-09 Michael Birchler  <mbirchler@snowflake.ch>
+	
+	* Fixed: Copy / paste to a diffrent language
+	
+2010-09-07 Michael Birchler  <mbirchler@snowflake.ch>
+	
+	* Fixed: Respect $TSconfig['TCEFORM.']['tt_content.']['CType.']['removeItems']
+	
+2010-08-08 Michael Birchler  <mbirchler@snowflake.ch>
+	
+	* Added: tx_multicolumn_tt_content_drawItem: wordWrapper for preview text
+	
+2010-07-08 Michael Birchler  <mbirchler@snowflake.ch>
+	
+	* Fixed: E_NOTICE errors
+	
+2010-07-05 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Fixed: frontend: if constant styles.content.imgtext.colPos0.maxW or styles.content.imgtext.maxW was not set column calculation was faulty
+	
+2010-06-30 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Fixed: clickmenu: paste into with recursive multicolumn container
+	
+2010-06-29 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Fixed: respect sys_language_contentOL
+	* Added: workspace support
+	* Added: csh help file for flexform
+	* Added: TSconfig configuration option for max number of columns tx_multicolumn.config.advancedLayouts.maxNumberOfColumns
+	* Fixed: Added CType multicolumn correctly 
+	
+2010-06-23 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Added: compatibility to TYPO3 4.4
+
+2010-06-07 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Added: warning message if XCLASS $GLOBALS['TYPO3_CONF_VARS'][TYPO3_MODE]['XCLASS']['ext/cms/layout/class.tx_cms_layout.php'] is used
+	* Added: compatibility check for installation
+	
+2010-06-04 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Removed: unused defaultTs.txt
+	
+2010-06-03 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Added: clickmenu: paste into multicolumn container ist now possible with contextmenu
+	* Fixed: TSconfig: custom page ts config wasn't respected
+	* Fixed: automatic image shrink didn't work on certain circumstances
+	* Changed: tceform: description of multicolumn element
+	
+2010-06-02 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Fixed: clickmenu: multicolumn_parent_id wasn't applied for new content elements
+	
+2010-06-01 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Fixed: tcemain: Recursive copy, cut and localize of multicolumncontainers
+	* Fixed: cms_layout: Delete warning quirks
+	* Fixed: tceform: Request refresh if multicolumn_parent_id is changed 
+	* Fixed: emconf: Installation requests clear cache
+	
+2010-05-04 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Added: Multicolumn content element delete warning displays number of child content elements
+	* Fixed: Typo of preset layout
+	* Fixed: snowflake gmbh to snowflake productions GmbH
+	
+2010-04-27 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Fixed: Lost content element couldn't be edited
+	* Fixed: Show multicolumn item event table element is not present
+	* Changed: Error handling for frontend
+	* Added: Inline comments
+	
+2010-04-20 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Fixed: $GLOBALS['TSFE']->register['maxImageWidth'] isn't restored after multicolumn elements
+	
+2010-04-06 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Fixed: Access rights didn't get respect on processing the wizard items array
+	* Added: tx_multicolumn_parentid to exclude list
+	
+2010-04-01 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Fixed: Various bug fixes releated to copy/move inside/outside a multicolumn container
+	* Added: Container for content elements with no relation to a multicolumn colum
+	* Added: Dynamic colPos for content elements within multicolumn container
+	
+2010-03-22 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Fixed: Multicolumn childern didn't get copied from a page to an other page
+	
+2009-11-18 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Fixed: faulty updated irre_parent id if you copy a multicolumncontainer
+	
+2009-03-03 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Added parentCobj data to multicolumnItems
+	* Added multicolumnContainerColPos register to determine colPos of parent content element
+	* Fixed labels
+	* Fixed multicolumnitems count in list setup
+
+2009-02-27 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Add new tab in content element for multicolumn items
+
+2009-02-25 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Fixed flexform positioning and labels
+
+2009-02-24 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Added possibility to clear a multicolumn container inside a multicolumn container
+
+2009-02-23 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Changed localization mode in irre $TCA['tt_content']['columns']['tx_multicolumn_items']
+
+2009-02-05 Michael Birchler  <mbirchler@snowflake.ch>
+
+	* Initial release

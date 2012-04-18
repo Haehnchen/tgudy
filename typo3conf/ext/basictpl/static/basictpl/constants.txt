@@ -1,0 +1,70 @@
+plugin.tx_basictpl {
+
+  # cat=plugin.tx_basictpl/enable/009; type=color; label= color: select color schema. use hex or dropbox
+  page.color = purple	
+
+  # cat=plugin.tx_basictpl/enable/010; type=file[png,jpg,gif]; label=Logo file: Use this file as image
+  logo.path = 
+
+  # cat=plugin.tx_basictpl/enable/011; type=int+; label=Logo image width: Image width for Logo
+  logo.width = 250
+  
+  # cat=plugin.tx_basictpl/enable/012; type=file[png,jpg,gif]; label=Second logo file: Use this file as image
+  sublogo.path = 
+
+  # cat=plugin.tx_basictpl/enable/013; type=int+; label=Second logo width: Image width for Second logo
+  sublogo.width = 250	
+	
+
+  # cat=plugin.tx_basictpl/enable/015; type=options[horizontal, vertical, fade]; change the effect of image slider
+  page.fx = horizontal
+
+  # cat=plugin.tx_basictpl/enable/016; type=options[english, german]; label= select default page language
+  page.language = english	
+	
+  # cat=plugin.tx_basictpl/enable/016; type=options[verdana, droid, arial, georgia, helvetica, droid, times, ptsans, istok]; label= default font of page
+  page.font = istok		
+	
+	# cat=plugin.tx_basictpl/enable/017; type=boolean; label= Enable background animation
+	page.animate = 1	
+
+  # cat=plugin.tx_basictpl/other/010; type=int+; label=2ColsSplit id
+  grid.2ColsSplit = 5
+  
+  # cat=plugin.tx_basictpl/other/011; type=int+; label=2ColsRight id
+  grid.2ColsRight = 4
+  
+  # cat=plugin.tx_basictpl/other/012; type=int+; label=3Cols id
+  grid.3Cols = 3
+  
+  # cat=plugin.tx_basictpl/other/013; type=int+; label=2ColsLeft id
+  grid.2ColsLeft = 2
+  
+  # cat=plugin.tx_basictpl/other/014; type=int+; label=1Col id
+  grid.1Col = 1	
+}
+
+# scriptmerger configs
+plugin.tx_scriptmerger.css.compress.enable = 0
+plugin.tx_scriptmerger.javascript.compress.enable = 0
+
+#typo3 4.5 lightbox feature
+styles.content.imgtext.linkWrap {
+  lightboxEnabled = 1
+  lightboxRelAttribute = lightbox{field:uid}
+  lightboxCssClass = lightbox
+}
+
+styles.content.imgtext.colPos0.maxW = 700
+styles.content.imgtext.colPos1.maxW = 220
+styles.content.imgtext.colPos2.maxW = 220
+styles.content.imgtext.colPos3.maxW = 900
+
+
+config.headerComment = Website based on tGudy template by Haehnchen (Espendiller, Daniel) on themeforest.net - espend.de
+
+plugin.tt_news.latestMaxW = 50
+plugin.tt_news.latestMaxH = 50
+
+styles.content.imgtext.maxWInText = 0
+styles.content.imgtext.borderThick = 1

@@ -1,0 +1,6 @@
+	# add multicolumn rendering to tt_content
+tt_content.multicolumn = COA
+tt_content.multicolumn {
+	10 = < lib.stdheader
+	20 = < plugin.tx_multicolumn_pi1
+}

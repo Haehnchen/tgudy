@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for extension 'multicolumn'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="effectBox">Effect Box</label>
+			<label index="effectBox.effect">Effect</label>
+			<label index="effectBox.effect.slidingTab">Sliding tabs</label>
+			<label index="effectBox.effect.fadingTab">Fading tabs</label>
+			<label index="effectBox.effect.fadingTab2">Fading tabs 2</label>
+			<label index="effectBox.effect.accordion">Accordion</label>
+			<label index="effectBox.effect.vAccordion">Vertical Accordion</label>
+			<label index="effectBox.effectOptions">Effect options</label>
+			<label index="effectBox.width">Effect Box CSS Style</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="effectBox">Effekt Box</label>
+			<label index="effectBox.effect">Effekt</label>
+			<label index="effectBox.effect.slidingTab">Animierte Tabs</label>
+			<label index="effectBox.effect.fadingTab">Überblendende Tabs</label>
+			<label index="effectBox.effect.fadingTab2">Überblendende Tabs 2</label>
+			<label index="effectBox.effect.accordion">Akkordeon</label>
+			<label index="effectBox.effect.vAccordion">Vertikales Akkordeon</label>
+			<label index="effectBox.effectOptions">Effekt Optionen</label>
+			<label index="effectBox.width">Effekt Box CSS Style</label>
+		</languageKey>
+	</data>
+</T3locallang>

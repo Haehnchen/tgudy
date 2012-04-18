@@ -1,0 +1,160 @@
+.nav-wrapper ul {
+  margin:0;
+}
+
+.nav1 a,
+.nav1 a:link,
+.nav1 a:visited {
+  color:black;
+  text-decoration:none;
+  display:block;
+	
+  padding:0 0.5em;
+  line-height:2.5em;	
+}
+
+.nav1 li {
+  float:left;
+  position:relative;
+}
+
+.nav1, .nav1 ul, .nav1 li {
+  margin:0;padding:0;
+  list-style:none;
+}
+
+/* dhtml or css3 part */
+
+  .nav1 li.menuparent ul {
+    /* display: none; for no transitions */
+    
+    /* use transitions */
+    height:0;
+    overflow:hidden;
+		
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+
+  .nav1 li.menuparent:hover > ul {
+    /* display:block; for no transitions */
+    
+    /* use transitions */
+    transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
+
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=92)";
+    filter: alpha(opacity=92);
+    opacity: 0.92;		
+		
+    overflow:visible;
+    height:auto;  
+		
+		/* For IE 8 */
+		-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+		/* For IE 5.5 - 7 */
+		filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#BFBFBF');
+
+		zoom:1;			
+  }
+
+/* 1-level */
+
+  .nav1 > li {
+    background-color:white;
+    margin-left:5px;
+  }
+
+  .nav1 > li.active {
+    background:#E5E5E5;
+  } 
+
+  .nav1 > li:hover {
+    background:#F2F2F2;
+  }
+
+  
+/* 2-level; mostly also 3-level */
+
+  .nav1 ul {
+    position:absolute;
+    z-index:100;
+    top:2.5em;
+    left:0; /* IE7 */
+
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
+
+  }
+
+  .nav1 ul  {
+    width:12em;
+  }
+
+  .nav1 ul > li a {
+    width: 11em;
+  }
+  
+  .nav1 ul > li {
+
+    background:white;
+  }
+
+  .nav1 ul > li.active {
+    background:#EFEFEF;
+  }
+
+  .nav1 ul > li:hover {
+    background:#E5E5E5;
+  }
+
+  .nav1 ul > li a {
+    color:black;
+  }
+
+/* 3-level */
+  .nav1 ul ul {
+    top:0;
+    margin-left:12em;
+  }
+  
+.nav1 {
+  /* IE7 Overlay fix */
+  position:relative;
+  z-index:51;
+}    
+
+/* images */
+
+.nav1 > li.menuparent > a {
+  background: transparent url(img/menu-arrow-down.png) center right no-repeat;
+  padding-right:1.5em;
+
+}
+  
+.nav1 ul > li.menuparent > a {
+  background: transparent url(img/menu-arrow-right.png) center right no-repeat;
+  padding-right:1.5em;
+  width:10em;
+}
+
+/* overwrites */
+.nav1 > li a,
+.nav1 > li a:link,
+.nav1 > li a:visited {
+	color:white;
+}
+
+.nav1 ul a {
+	color:black !important;
+}
+
+.nav1 > li:hover,
+.nav1 > li.active {
+	background:#333333;
+ }

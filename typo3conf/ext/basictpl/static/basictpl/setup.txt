@@ -1,0 +1,626 @@
+plugin.tx_basictpl.page = PAGE
+plugin.tx_basictpl.page.config {
+  xhtml_cleaning = all
+  xmlprologue = none
+  doctype = xhtml_trans
+  htmlTag_setParams = xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de"
+  language = en
+  locale_all = en_US 
+ 
+  disablePrefixComment = 1
+  inlineStyle2TempFile = 1
+
+  spamProtectEmailAddresses = 2
+  spamProtectEmailAddresses_atSubst = @
+  
+  meaningfulTempFilePrefix = 50
+  
+  sendCacheHeaders = 1
+  
+  disableImgBorderAttr = 1
+	
+	index_enable = {$plugin.tx_basictpl.search.enable}
+  
+  // TYPO3 4.6 internal scriptmerger
+  minifyCSS = 1
+  minifyJS = 1
+
+  concatenateCss = 1
+  concatenateJs = 1  
+}
+
+plugin.tx_basictpl.page.shortcutIcon = {$path.template}/favicon.ico
+plugin.tx_basictpl.page.includeJSlibs {
+  jquery = EXT:basictpl/res/js/jquery/jquery.min.js
+  jquery_fancybox = EXT:basictpl/res/js/jquery/fancybox/jquery.fancybox-1.3.4.pack.js
+	jquery_easing = EXT:basictpl/res/js/jquery/jquery.easing.1.3.js
+	jquery_slider = EXT:basictpl/res/js/jquery/jquery.bxSlider.min.js
+}
+
+plugin.tx_basictpl.page.includeCSS {
+  file1 = EXT:basictpl/res/css/reset.css
+  file2 = EXT:basictpl/res/css/text.css  
+  file3 = EXT:basictpl/res/css/960.css
+  file4 = EXT:basictpl/res/js/jquery/fancybox/jquery.fancybox-1.3.4.css
+  
+  file10 = EXT:basictpl/res/menu.css
+  file11 = EXT:basictpl/res/css/typo3.css
+	file12 = EXT:basictpl/res/elements.css
+	file14 = EXT:basictpl/res/misc.css
+  
+  file20 = {$path.template}/style.css
+}
+
+plugin.tx_basictpl.page.includeJS {
+  file10 = EXT:basictpl/res/js/page.js  
+}
+
+plugin.tx_basictpl.page.meta.DESCRIPTION.ifEmpty = {$meta.description}
+plugin.tx_basictpl.page.config.headerComment = Website based on tGudy template by Haehnchen (Espendiller, Daniel) on themeforest.net - espend.de
+
+plugin.tx_basictpl.page.config.noPageTitle = 1
+plugin.tx_basictpl.page.headerData.10 = TEXT
+plugin.tx_basictpl.page.headerData.10 {
+  field = title
+  noTrimWrap = |<title>| - {$meta.title}</title>|
+}
+ 
+
+[globalVar = GP:tx_ttnews > 0]
+# seitentitel für tt_news singleViews
+plugin.tx_basictpl.page.headerData.10 {
+  stdWrap.data = GPvar:tx_ttnews|tt_news
+  stdWrap.wrap = {DB:tt_news:|:title}
+  insertData = 1
+}
+[global]
+
+plugin.tx_basictpl.logo.img = IMAGE
+plugin.tx_basictpl.logo.img {
+
+  file = {$plugin.tx_basictpl.logo.path}
+  file.width= {$plugin.tx_basictpl.logo.width}
+   
+  imageLinkWrap = 1
+  imageLinkWrap.enable = 1
+  imageLinkWrap.typolink {
+
+    parameter.data = leveluid:0
+    title = {$meta.title}
+    forceAbsoluteUrl = 1
+  }
+   altText = {$meta.title}
+}
+
+plugin.tx_basictpl.sublogo.img = IMAGE
+plugin.tx_basictpl.sublogo.img {
+
+  file = {$plugin.tx_basictpl.sublogo.path}
+  file.width= {$plugin.tx_basictpl.sublogo.width}
+   
+  altText = {$meta.title}
+}
+
+plugin.tx_basictpl.breadcrumb = COA
+plugin.tx_basictpl.breadcrumb.10 = HMENU
+plugin.tx_basictpl.breadcrumb.10.special = rootline
+plugin.tx_basictpl.breadcrumb.10.special.range = 0 | -1
+plugin.tx_basictpl.breadcrumb.10.1 = TMENU
+plugin.tx_basictpl.breadcrumb.10.1 {
+  noBlur = 1
+  NO.linkWrap = | &raquo; ||*|| &raquo; ||*||
+  CUR = 1
+  CUR.ATagParams = class=active
+  #CUR.doNotLinkIt = 1
+}
+ 
+[globalVar = GP:tx_ttnews|tt_news > 0]
+plugin.tx_basictpl.breadcrumb.20 = RECORDS
+plugin.tx_basictpl.breadcrumb.20 {
+  tables = tt_news
+  source.data = GPvar: tx_ttnews | tt_news
+  conf.tt_news = TEXT
+  conf.tt_news.field = title
+  conf.tt_news.noTrimWrap= | &raquo; ||
+  conf.tt_news.typolink {
+
+    parameter = {page:uid}
+    parameter.insertData = 1
+    useCacheHash = 1
+
+  
+    addQueryString = 1
+    addQueryString.method = GET
+  
+    # remove the page id from the parameters so it is not inserted twice
+    addQueryString.exclude = id
+    
+    ATagParams = class=active
+    
+  
+  }
+
+}
+[global]
+
+
+
+tt_content.image.20.1.altText.field = altText // imagecaption // header
+tt_content.image.20.1.titleText.field = titleText // imagecaption // header
+
+plugin.tt_news.displaySingle.image.imageLinkWrap {
+  JSwindow = 0
+  directImageLink = 1
+  linkParams.ATagParams {
+    dataWrap = class="lightbox" rel="lightbox{field:uid}" title="{field:imagecaption//title}"
+  }
+
+  height = {$styles.content.imgtext.linkWrap.height}m
+  width = {$styles.content.imgtext.linkWrap.width}m
+}
+
+tt_content.stdWrap.innerWrap.cObject.default.15.postCObject = TEXT
+tt_content.stdWrap.innerWrap.cObject.default.15.postCObject {
+  value = csc-content csc-layout-{field:layout} csc-frame-{field:section_frame}
+  noTrimWrap = | |
+  insertData  = 1
+}
+
+tt_content.stdWrap.innerWrap.cObject.default.15.postCObject.append = CASE
+tt_content.stdWrap.innerWrap.cObject.default.15.postCObject.append {
+  key.field = CType
+  
+  default = TEXT
+  default.data = field:CType
+  default.noTrimWrap = | csc-type-||
+  
+  list < .default
+  list.data = field:list_type
+  
+  required = 1
+}
+
+plugin.tx_basictpl.content.wraptext = CASE
+plugin.tx_basictpl.content.wraptext {
+  key.field = section_frame
+  default=|
+  100 = TEXT
+  100.value = <div class="box-content">|</div>
+  
+  101 < .100
+}
+
+tt_content.image.20.stdWrap.wrap.cObject < plugin.tx_basictpl.content.wraptext
+tt_content.text.20.stdWrap.wrap.cObject < plugin.tx_basictpl.content.wraptext
+tt_content.table.20.stdWrap.wrap.cObject < plugin.tx_basictpl.content.wraptext
+tt_content.bullets.20.dataWrap.wrap.cObject < plugin.tx_basictpl.content.wraptext
+
+#resize any image depend on colPos; this value is divided by 2 on css_styled_content
+tt_content.image.20.maxW.cObject = CASE
+tt_content.image.20.maxW.cObject {
+  key.field = colPos
+  
+  default = TEXT
+  default.value = {$styles.content.image.maxW}  
+  
+  0 = TEXT
+  0.value = {$styles.content.imgtext.colPos0.maxW}
+
+  1 = TEXT
+  1.value = {$styles.content.imgtext.colPos1.maxW}
+
+  2 = TEXT
+  2.value = {$styles.content.imgtext.colPos2.maxW}
+
+  3 = TEXT
+  3.value = {$styles.content.imgtext.colPos3.maxW}
+}
+
+# we cant set maxImageWidth with CASE so wrap them in objects
+# maxImageWidth: is used on "Image Only" to generate rows and cols
+plugin.tx_basictpl.content.main = COA
+plugin.tx_basictpl.content.main {
+  5 = LOAD_REGISTER
+
+  5.maxImageWidth = {$styles.content.imgtext.colPos0.maxW}
+  5.contentWidth = {$styles.content.imgtext.colPos0.maxW}
+  
+ 
+  10 < styles.content.get
+  15 = RESTORE_REGISTER
+}
+
+
+
+plugin.tx_basictpl.content.left = COA
+plugin.tx_basictpl.content.left {
+  5 = LOAD_REGISTER
+
+  5.maxImageWidth = {$styles.content.imgtext.colPos1.maxW}
+  5.contentWidth = {$styles.content.imgtext.colPos1.maxW}
+ 
+  10 < styles.content.getLeft
+  10.slide = -1
+    
+  15 = RESTORE_REGISTER
+}
+
+plugin.tx_basictpl.content.right = COA
+plugin.tx_basictpl.content.right {
+  5 = LOAD_REGISTER
+
+  5.maxImageWidth = {$styles.content.imgtext.colPos2.maxW}
+  5.contentWidth = {$styles.content.imgtext.colPos2.maxW}
+ 
+  10 < styles.content.getRight
+  10.slide = -1
+  
+  15 = RESTORE_REGISTER
+}
+
+plugin.tx_basictpl.content.border = COA
+plugin.tx_basictpl.content.border {
+  5 = LOAD_REGISTER
+
+  5.maxImageWidth = {$styles.content.imgtext.colPos3.maxW}
+  5.contentWidth = {$styles.content.imgtext.colPos3.maxW}
+ 
+  10 < styles.content.getBorder
+  15 = RESTORE_REGISTER
+}
+
+tt_content.stdWrap.innerWrap.cObject {
+  100 < tt_content.stdWrap.innerWrap.cObject.default
+  100.15.value := appendString( toggle-box)
+  
+  101 < tt_content.stdWrap.innerWrap.cObject.default
+  101.15.value := appendString( toggle-box toggle-box-open)  
+}
+
+plugin.tx_basictpl.lib.menu.footer = COA
+plugin.tx_basictpl.lib.menu.footer {
+  10 = TEXT
+  10.value = {$meta.title}
+ 
+  15 = TEXT
+  15.noTrimWrap = | - ||
+ 
+ 
+  20 = HMENU
+  20 {
+    special = directory
+    special.value = {$plugin.tx_basictpl.menu.footer.pid}
+    wrap = <ul class="menu"> | </ul>
+    1 = TMENU
+    1 {
+      noBlur = 1
+      NO.allStdWrap.insertData = 1
+      NO.allWrap = <li> | </li>
+      NO.ATagBeforeWrap = 1
+    }
+ 
+  }
+}
+
+
+plugin.tx_basictpl.lib.media.singleImage = IMAGE
+plugin.tx_basictpl.lib.media.singleImage {
+  file = {$path.template}/img/pic-default.jpg
+  file.width = 960c
+  file.height = 270c
+  file.import = uploads/media/
+  file.import.data = levelmedia: -1, slide
+  file.import.listNum = 0
+  file.import.override.field = media
+}
+
+plugin.tx_basictpl.lib.menu.simple = HMENU
+plugin.tx_basictpl.lib.menu.simple {
+  1 = TMENU
+  1 {
+    noBlur = 1
+    expAll=1
+    wrap = <ul id="menu" class="nav1">|</ul>
+    NO.wrapItemAndSub = <li> | </li>
+    ACT = 1
+    ACT.wrapItemAndSub = <li class="active"> | </li>
+      
+    IFSUB=1
+    IFSUB{
+      wrapItemAndSub = <li class="menuparent">|</li>
+    }
+
+    ACTIFSUB = 1
+    ACTIFSUB {
+      wrapItemAndSub = <li class="menuparent active">|</li>
+    }
+
+      
+   }
+  
+  2 < .1
+  2.wrap = <ul>|</ul>
+  
+  3 < .2
+
+}
+
+plugin.tx_basictpl.lib.grids = TEMPLATE
+plugin.tx_basictpl.lib.grids {
+  template = FILE
+  template.file = EXT:basictpl/res/template.html
+  workOnSubpart.cObject = CASE
+  workOnSubpart.cObject {
+    key.data = levelfield:-1, backend_layout_next_level, slide
+    key.override.field = backend_layout
+    default = TEXT
+    default.value = 2_COLS_RIGHT
+    
+    {$plugin.tx_basictpl.grid.1Col} = TEXT
+    {$plugin.tx_basictpl.grid.1Col}.value = NO_COLS
+    
+    {$plugin.tx_basictpl.grid.2ColsLeft} = TEXT
+    {$plugin.tx_basictpl.grid.2ColsLeft}.value = 2_COLS_LEFT
+    
+    {$plugin.tx_basictpl.grid.3Cols} = TEXT
+    {$plugin.tx_basictpl.grid.3Cols}.value = 3_COLS
+    
+    {$plugin.tx_basictpl.grid.2ColsRight} = TEXT
+    {$plugin.tx_basictpl.grid.2ColsRight}.value = 2_COLS_RIGHT
+    
+    {$plugin.tx_basictpl.grid.2ColsSplit} = TEXT
+    {$plugin.tx_basictpl.grid.2ColsSplit}.value = 2_COLS_SPLIT     
+  }
+  
+  subparts.CONTENT < plugin.tx_basictpl.content.main
+  subparts.SIDEBAR-RIGHT < plugin.tx_basictpl.content.right
+  subparts.SIDEBAR-LEFT < plugin.tx_basictpl.content.left  
+}
+
+
+plugin.tx_basictpl.lib.body = TEXT
+plugin.tx_basictpl.lib.body.noTrimWrap = |<body class="|">|
+plugin.tx_basictpl.lib.body.insertData = 1
+plugin.tx_basictpl.lib.body.value := addToList(page-{field:uid})
+
+
+[treeLevel = 0]
+plugin.tx_basictpl.lib.body.value := addToList(front)
+[else]
+plugin.tx_basictpl.lib.body.value := addToList(not-front)
+[global]
+
+[globalVar = GP:tx_ttnews|tt_news > 0]
+plugin.tx_basictpl.lib.body.value := addToList(tt-news-page)
+[global]
+
+[globalVar = LIT:1 = {$plugin.tx_basictpl.page.animate}]
+plugin.tx_basictpl.lib.body.value := addToList(bg-animate-enabled)
+[global]
+
+plugin.tx_basictpl.lib.body.value := addToList({$plugin.tx_basictpl.page.font})
+
+[globalVar = LIT:german = {$plugin.tx_basictpl.page.language}]
+plugin.tx_basictpl.page.config.language = de
+plugin.tx_basictpl.page.config.locale_all = de_DE@euro
+[global]
+
+plugin.tt_news.templateFile = EXT:basictpl/res/templates/tt_news/tt_news_v3_template.html
+
+plugin.tt_news {
+  displaySingle {
+    date_stdWrap.strftime= %A %e. %B %Y
+    time_stdWrap.strftime= %H:%M
+  }
+  
+  displayList {
+    date_stdWrap.strftime= %A %e. %B %Y
+    time_stdWrap.strftime= %H:%M
+  }
+  
+  displayLatest {
+    date_stdWrap.strftime= %A %e. %B %Y
+    time_stdWrap.strftime= %H:%M
+  }
+  
+}
+
+plugin.tt_news.displayLatest.image.noImage_stdWrap {
+    cObject = IMAGE
+    cObject {
+      wrap =
+      file = GIFBUILDER
+      file {
+        XY = {$plugin.tt_news.latestMaxW},{$plugin.tt_news.latestMaxH}
+        backColor = #010101
+
+        10 = TEXT
+        10 {
+          text = No image
+          fontSize = 14
+          niceText = 1
+          fontColor = #000000
+          offset = {$plugin.tt_news.latestMaxW}/2-30, {$plugin.tt_news.latestMaxH}/2+4
+        }
+      }
+    }
+  }
+
+plugin.tt_news._LOCAL_LANG.de.more = weiterlesen
+plugin.tt_news._LOCAL_LANG.en.more = read more
+
+# for search
+plugin.tt_news.allowCaching=1
+plugin.tx_indexedsearch.rules_stdWrap.wrap = <span class="standardtext"> | </span>
+
+plugin.tx_indexedsearch {
+  templateFile = EXT:basictpl/res/templates/indexed_search/indexed_search.tmpl
+  show.advancedSearchLink = 0
+}
+
+#Buttonlink
+includeLibs.userFunc= EXT:basictpl/lib/typolink.php
+tt_content.text.20.parseFunc.tags.link {
+  postUserFunc= user_userFunc->addSpan
+  postUserFunc{
+    class = button
+    ATagTitle.field = title
+  }
+}
+
+plugin.tx_basictpl.page.bodyTagCObject < plugin.tx_basictpl.lib.body
+plugin.tx_basictpl.page.bodyTagCObject.value := replaceString(,| )
+
+plugin.tx_basictpl.page.10 = TEMPLATE
+plugin.tx_basictpl.page.10.template = FILE
+plugin.tx_basictpl.page.10.template.file = EXT:basictpl/res/template.html
+plugin.tx_basictpl.page.10.workOnSubpart = DOCUMENT_BODY
+
+# overwrites
+plugin.tx_basictpl.breadcrumb.10.1.NO.linkWrap >
+plugin.tx_basictpl.breadcrumb.20.conf.tt_news.noTrimWrap >
+	
+
+plugin.tx_basictpl.logo.favicon < plugin.tx_basictpl.logo.img
+plugin.tx_basictpl.logo.favicon.file.height = 20m
+
+plugin.tx_gbh_lib.content.headercase = COA
+plugin.tx_gbh_lib.content.headercase.10 < styles.content.get
+plugin.tx_gbh_lib.content.headercase.10.select.where = colPos = 3
+
+plugin.tx_gbh_lib.content.headercase.10.stdWrap.wrap = <div id="header-content" class="clearfix"><div id="header-content-wrapper" class="grid_16"><div class="frame"><div id="slider" class="{$plugin.tx_basictpl.page.fx}">|</div></div></div></div>
+plugin.tx_gbh_lib.content.headercase.10.stdWrap.required = 1 
+
+
+plugin.tx_basictpl.headeralt = TEMPLATE
+plugin.tx_basictpl.headeralt.template = FILE
+plugin.tx_basictpl.headeralt.template.file = EXT:basictpl/res/template.html
+plugin.tx_basictpl.headeralt.workOnSubpart = ALTHEADER
+
+
+plugin.tx_basictpl.headeralt.marks.TITLE = TEXT
+plugin.tx_basictpl.headeralt.marks.TITLE.field = title
+
+plugin.tx_basictpl.headeralt.marks.SUBTITLE = TEXT
+plugin.tx_basictpl.headeralt.marks.SUBTITLE.field = subtitle
+
+
+plugin.tx_basictpl.headeralt.marks.IMAGE = IMAGE
+plugin.tx_basictpl.headeralt.marks.IMAGE.file {
+  import =  uploads/media/
+  import.field = media
+  import.listNum = 0
+  height = 38m
+}
+
+
+plugin.tx_gbh_lib.content.headercase.stdWrap {
+	ifEmpty.cObject < plugin.tx_basictpl.headeralt
+}
+
+
+plugin.tx_gbh_lib.content.footer = COA
+plugin.tx_gbh_lib.content.footer {
+  5 = LOAD_REGISTER
+
+  5.maxImageWidth = {$styles.content.imgtext.colPos4.maxW}
+  5.contentWidth = {$styles.content.imgtext.colPos4.maxW}	
+
+  10 < styles.content.get
+  10.select.where = colPos = 4
+  10.slide = -1
+  15 = RESTORE_REGISTER
+}
+
+plugin.tx_gbh_lib.content.header = COA
+plugin.tx_gbh_lib.content.header {
+  5 = LOAD_REGISTER
+
+  #5.maxImageWidth = {$styles.content.imgtext.colPos3.maxW}
+  #5.contentWidth = {$styles.content.imgtext.colPos3.maxW}
+	#5.maxWInText = {$styles.content.imgtext.colPos3.maxW}
+	
+  10 < plugin.tx_gbh_lib.content.headercase
+
+  15 = RESTORE_REGISTER
+}
+
+plugin.tx_gbh_lib.ttcontent.textpic < tt_content.textpic.20
+tt_content.textpic.20 = CASE
+tt_content.textpic.20 {
+  key.field=colPos
+  default < plugin.tx_gbh_lib.ttcontent.textpic
+  default.maxW = 490
+  default.maxWInText = 700
+
+	3 < .default
+  3.maxW = {$styles.content.imgtext.colPos3.maxW}
+  3.maxWInText = {$styles.content.imgtext.colPos3.maxW}
+  
+	2 < .default
+  2.maxW = {$styles.content.imgtext.colPos2.maxW}
+  2.maxWInText = {$styles.content.imgtext.colPos2.maxW}  
+  
+	1 < .default
+  1.maxW = {$styles.content.imgtext.colPos2.maxW}
+  1.maxWInText = {$styles.content.imgtext.colPos2.maxW}    
+} 
+	
+plugin.tx_basictpl.page.10.subparts {
+  LOGO < plugin.tx_basictpl.logo.img
+  SUBLOGO < plugin.tx_basictpl.sublogo.img
+	
+  HMENU < plugin.tx_basictpl.lib.menu.simple
+  BREADCRUMB < plugin.tx_basictpl.breadcrumb
+	
+	FAV < plugin.tx_basictpl.logo.favicon
+  
+	HEADERCONTENT < plugin.tx_gbh_lib.content.header
+	FOOTER < plugin.tx_gbh_lib.content.footer 
+	#temp.footer
+	
+  CONTENT < plugin.tx_basictpl.lib.grids
+  #FOOTER < plugin.tx_basictpl.lib.menu.footer  
+}
+[globalVar = LIT: = {$plugin.tx_basictpl.page.color}]
+
+[else]
+plugin.tx_basictpl.page.CSS_inlineStyle (
+#background {
+  background-color: {$plugin.tx_basictpl.page.color};
+}
+)
+
+
+[globalVar = LIT:droid = {$plugin.tx_basictpl.page.font}]
+ plugin.tx_basictpl.page.headerData.100 = TEXT
+ plugin.tx_basictpl.page.headerData.100.value = <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+[global]
+
+[globalVar = LIT:ptsans = {$plugin.tx_basictpl.page.font}]
+ plugin.tx_basictpl.page.headerData.100 = TEXT
+ plugin.tx_basictpl.page.headerData.100.value = <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+[global]
+
+[globalVar = LIT:istok = {$plugin.tx_basictpl.page.font}]
+ plugin.tx_basictpl.page.headerData.100 = TEXT
+ plugin.tx_basictpl.page.headerData.100.value = <link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+[global]
+
+
+
+#devel
+[globalVar = TSFE : beUserLogin> 0]
+config.no_cache = 1
+plugin.tx_scriptmerger.css.enable = 0
+plugin.tx_scriptmerger.javascript.enable = 0
+[global]
+
+admPanel {
+  enable.edit=1
+  module.edit.forceDisplayFieldIcons=1
+  hide=1
+  override.tsdebug.forceTemplateParsing = 1
+}
+
+

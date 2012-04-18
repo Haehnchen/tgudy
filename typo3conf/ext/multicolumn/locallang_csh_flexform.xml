@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<T3locallang>
+	<meta type="array">
+		<description>CSH labels for FlexForm fields</description>
+		<type>CSH</type>
+		<csh_table></csh_table>
+		<fileId>EXT:multicolumn/locallang_csh_flexform.xml</fileId>
+		<labelContext type="array"></labelContext>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="columnWidth.description">The TypoScript property optionSplit is possible. Example: 24 |*| 19</label>
+			<label index="columnPadding.description">The TypoScript property optionSplit is possible. Example: 0 |*| 0 10px</label>
+			<label index="columnMargin.description">The TypoScript property optionSplit is possible. Example: 0 |*| 0 10px</label>
+			<label index="effectBoxWidth.description">The CSS properties for the element. Example: height:250px;width:600px;</label>
+			<label index="effectOptions.description">The Javascript properties according the selected effect. (The option must always start with a comma). An example for the sudo slider effect would be ",insertAfter : true"</label>
+		</languageKey>
+	</data>
+</T3locallang>
