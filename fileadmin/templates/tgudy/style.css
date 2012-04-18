@@ -228,8 +228,10 @@ body, #footer-wrapper {
 #header-content .frame {
   padding: 20px;
 	height:260px;
-
+  width:900px;
 	background: transparent url(img/header-slider.png) no-repeat top center; 
+  overflow:hidden;
+
 }
 
 #header-title-wrapper {

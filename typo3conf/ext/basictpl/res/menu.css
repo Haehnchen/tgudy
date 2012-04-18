@@ -53,10 +53,11 @@
     overflow:visible;
     height:auto;  
 		
+    /* border: not working on lvl > 2 */
 		/* For IE 8 */
-		-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+		/* -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')"; */
 		/* For IE 5.5 - 7 */
-		filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#BFBFBF');
+		/* filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#BFBFBF'); */
 
 		zoom:1;			
   }
@@ -64,7 +65,7 @@
 /* 1-level */
 
   .nav1 > li {
-    background-color:white;
+    background-color:#F9F9F9;
     margin-left:5px;
   }
 
@@ -85,9 +86,9 @@
     top:2.5em;
     left:0; /* IE7 */
 
-    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
 
   }
@@ -102,7 +103,7 @@
   
   .nav1 ul > li {
 
-    background:white;
+    background:#F9F9F9;
   }
 
   .nav1 ul > li.active {

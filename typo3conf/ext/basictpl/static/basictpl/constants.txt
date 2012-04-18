@@ -16,13 +16,13 @@ plugin.tx_basictpl {
   sublogo.width = 250	
 	
 
-  # cat=plugin.tx_basictpl/enable/015; type=options[horizontal, vertical, fade]; change the effect of image slider
+  # cat=plugin.tx_basictpl/enable/015; type=options[horizontal,vertical,fade]; change the effect of image slider
   page.fx = horizontal
 
-  # cat=plugin.tx_basictpl/enable/016; type=options[english, german]; label= select default page language
+  # cat=plugin.tx_basictpl/enable/016; type=options[english,german]; label= select default page language
   page.language = english	
 	
-  # cat=plugin.tx_basictpl/enable/016; type=options[verdana, droid, arial, georgia, helvetica, droid, times, ptsans, istok]; label= default font of page
+  # cat=plugin.tx_basictpl/enable/016; type=options[verdana,droid,arial,georgia,helvetica,droid,times,ptsans,istok]; label= default font of page
   page.font = istok		
 	
 	# cat=plugin.tx_basictpl/enable/017; type=boolean; label= Enable background animation
@@ -61,7 +61,7 @@ styles.content.imgtext.colPos2.maxW = 220
 styles.content.imgtext.colPos3.maxW = 900
 
 
-config.headerComment = Website based on tGudy template by Haehnchen (Espendiller, Daniel) on themeforest.net - espend.de
+config.headerComment = Website based on tGudy template by Haehnchen (Espendiller, Daniel) on espend.de
 
 plugin.tt_news.latestMaxW = 50
 plugin.tt_news.latestMaxH = 50
