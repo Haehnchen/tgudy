@@ -169,10 +169,8 @@ class tx_multicolumn_tt_content_drawItem implements tx_cms_layout_tt_content_dra
 	 * @return	string			$column markup
 	 */		
 	protected function buildLostContentElementsRow ($lastColumnNumber) {
-			// is user not in workspace select only lost element that doesn't belong to a workspace
-		if(!$GLOBALS['BE_USER']->workspace) $nonWorkspaceQuery = 't3ver_wsid = '.intval($GLOBALS['BE_USER']->workspace).' AND ';
-		$additionalWhere = $nonWorkspaceQuery . 'deleted = 0 AND colPos >' . intval($lastColumnNumber) . ' OR (colPos < 10 AND tx_multicolumn_parentid = ' . $this->multiColUid . ')';
-		$elements = tx_multicolumn_db::getContentElementsFromContainer(null, null, $this->multiColUid, $this->multiColCe['sys_language_uid'], true, $additionalWhere, $this->pObj);
+		$additionalWhere = ' deleted = 0 AND colPos >' . intval($lastColumnNumber) . ' OR (colPos < 10 AND tx_multicolumn_parentid = ' . $this->multiColUid . ')';
+                $elements = tx_multicolumn_db::getContentElementsFromContainer(null, null, $this->multiColUid, $this->multiColCe['sys_language_uid'], true, $additionalWhere, $this->pObj);
 
 		if($elements) {
 			$markup = '<div class="lostContentElementContainer">';

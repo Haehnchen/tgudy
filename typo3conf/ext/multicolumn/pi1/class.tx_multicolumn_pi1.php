@@ -178,10 +178,16 @@ class tx_multicolumn_pi1 extends tx_multicolumn_pi_base  {
 			}
 			
 				// force equal height ?
+			$config = tx_multicolumn_div::getTSConfig($GLOBALS['TSFE']->id, 'config');
 			if(!empty($this->layoutConfiguration['makeEqualElementBoxHeight'])) {
-				$config = tx_multicolumn_div::getTSConfig($GLOBALS['TSFE']->id, 'config');
 				if(is_array($config['advancedLayouts.']['makeEqualElementBoxHeight.']['includeFiles.'])) {
 					$this->includeCssJsFiles($config['advancedLayouts.']['makeEqualElementBoxHeight.']['includeFiles.']);
+				}
+			}
+				// force equal height for each column
+			if(!empty($this->layoutConfiguration['makeEqualElementColumnHeight'])) {
+				if(is_array($config['advancedLayouts.']['makeEqualElementColumnHeight.']['includeFiles.'])) {
+					$this->includeCssJsFiles($config['advancedLayouts.']['makeEqualElementColumnHeight.']['includeFiles.']);
 				}
 			}
 			
@@ -197,6 +203,7 @@ class tx_multicolumn_pi1 extends tx_multicolumn_pi_base  {
 		$listData = $listItemData[0];
 		$listData['content'] = $this->renderListItems('column', $listItemData, $this->llPrefixed);
 		$listData['makeEqualElementBoxHeight'] = $this->layoutConfiguration['makeEqualElementBoxHeight'];
+		$listData['makeEqualElementColumnHeight'] = $this->layoutConfiguration['makeEqualElementColumnHeight'];
 
 		return $this->renderItem('columnContainer', $listData);
 	}
@@ -260,30 +267,35 @@ class tx_multicolumn_pi1 extends tx_multicolumn_pi_base  {
 			$columnData = $conf;
 			$columnData['columnWidth'] = $conf['columnWidth'] ? $conf['columnWidth'] : round(100/$numberOfColumns);
 
-				// evaluate columnWidth in pixels
-			if($conf['containerMeasure'] == 'px' && $conf['containerWidth']) {
-				$columnData['columnWidthPixel'] = round($conf['containerWidth']/$numberOfColumns);
+			if(empty($this->layoutConfiguration['disableAutomaticImageWidthCalculation'])) {
+					// evaluate columnWidth in pixels
+				if($conf['containerMeasure'] == 'px' && $conf['containerWidth']) {
+					$columnData['columnWidthPixel'] = round($conf['containerWidth']/$numberOfColumns);
+	
+					// if columnWidth and column measure is set
+				} else if($conf['columnMeasure'] == 'px' && $conf['columnWidth']) {
+					$columnData['columnWidthPixel'] = $conf['columnWidth'];
+					
+					// if container width is set in percent (default 100%)
+				} else if ($colPosMaxImageWidth) {
+					$columnData['columnWidthPixel'] = tx_multicolumn_div::calculateMaxColumnWidth($columnData['columnWidth'], $colPosMaxImageWidth, $numberOfColumns);
+				}
 				
-				// if columnWidth and column measure is set
-			} else if($conf['columnMeasure'] == 'px' && $conf['columnWidth']) {
-				$columnData['columnWidthPixel'] = $conf['columnWidth'];
+					// calculate total column padding width
+				if($columnData['columnPadding']) {
+					$columnData['columnPaddingTotalWidthPixel'] = tx_multicolumn_div::getPaddingTotalWidth($columnData['columnPadding']);
+				}
+					// do auto scale if requested
+				$maxImageWidth = $disableImageShrink ? null : (isset($columnData['columnWidthPixel']) ? ($columnData['columnWidthPixel'] - $columnData['columnPaddingTotalWidthPixel']) : null);
 				
-				// if container width is set in percent (default 100%)
-			} else if ($colPosMaxImageWidth) {
-				$columnData['columnWidthPixel'] = tx_multicolumn_div::calculateMaxColumnWidth($columnData['columnWidth'], $colPosMaxImageWidth, $numberOfColumns);
+			} else {
+				$maxImageWidth = $colPosMaxImageWidth;
 			}
 
-				// calculate total column padding width
-			if($columnData['columnPadding']) {
-				$columnData['columnPaddingTotalWidthPixel'] = tx_multicolumn_div::getPaddingTotalWidth($columnData['columnPadding']);
-			}
 			
 			$columnData['colPos'] = $multicolumnColPos;
 			$contentElements = tx_multicolumn_db::getContentElementsFromContainer($columnData['colPos'], $this->cObj->data['pid'], $this->multicolumnContainerUid, $this->cObj->data['sys_language_uid']);
 			if($contentElements) {
-					// do auto scale if requested
-				$maxImageWidth = $disableImageShrink ? null : (isset($columnData['columnWidthPixel']) ? ($columnData['columnWidthPixel'] - $columnData['columnPaddingTotalWidthPixel']) : null);
-
 				$GLOBALS['TSFE']->register['maxImageWidth'] = $maxImageWidth;
 				$GLOBALS['TSFE']->register['maxImageWidthInText'] = $maxImageWidth;
 
@@ -309,7 +321,8 @@ class tx_multicolumn_pi1 extends tx_multicolumn_pi_base  {
 	 * @return	String		All items rendered as a string
 	 */	
 	protected function renderColumnWidth () {
-		$colPosData = array('colPos' => $this->cObj->data['colPos']);
+		$conf = is_array($this->layoutConfiguration) ? $this->layoutConfiguration : array();
+		$colPosData = array_merge(array('colPos' => $this->cObj->data['colPos'], 'CType' => $this->cObj->data['CType']), $conf);
 		return intval($this->renderItem('columnWidth', $colPosData));
 	}
 }

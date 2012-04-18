@@ -142,6 +142,14 @@
 							</config>
 						</TCEforms>
 					</disableImageShrink>
+					<disableStyles>
+						<TCEforms>
+							<label>LLL:EXT:multicolumn/locallang_db.xml:tt_content.tx_multicolumn_disableDefaultStyles</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</disableStyles>
 					<makeEqualElementBoxHeight>
 						<TCEforms>
 							<label>LLL:EXT:multicolumn/locallang_db.xml:tt_content.tx_multicolumn_makeEqualElementBoxHeight</label>
@@ -150,6 +158,14 @@
 							</config>
 						</TCEforms>
 					</makeEqualElementBoxHeight>
+					<makeEqualElementColumnHeight>
+						<TCEforms>
+							<label>LLL:EXT:multicolumn/locallang_db.xml:tt_content.tx_multicolumn_makeEqualElementColumnHeight</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</makeEqualElementColumnHeight>
 				</el>
 			</ROOT>
 		</advancedLayout>

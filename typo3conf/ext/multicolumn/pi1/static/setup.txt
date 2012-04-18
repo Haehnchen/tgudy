@@ -36,7 +36,10 @@ plugin.tx_multicolumn_pi1 {
 			width = width: {field:containerWidth}{field:containerMeasure};
 			width {
 				insertData = 1
-				if.isTrue.field = containerWidth
+				if {
+					isTrue.field = containerWidth
+					isFalse.field = disableStyles
+				}
 			}
 				# to do add configuration option to prevent clear
 			clearfix = clearfix
@@ -45,6 +48,12 @@ plugin.tx_multicolumn_pi1 {
 			makeEqualElementBoxHeight {
 				if.isTrue.field = makeEqualElementBoxHeight
 			}
+			
+			makeEqualElementColumnHeight = multicolumnContainerfixColumnHeight
+			makeEqualElementColumnHeight {
+				if.isTrue.field = makeEqualElementColumnHeight
+			}
+			
 
 				# layout class
 			layout = multicolumnLayout{field:layoutKey}
@@ -58,7 +67,7 @@ plugin.tx_multicolumn_pi1 {
 		2 {
 			insertData = 1
 			value (
-				<ul class="multicolumnContainer {register:layout} {register:clearfix} {register:makeEqualElementBoxHeight}" style="{register:width}">
+				<ul class="multicolumnContainer {register:layout} {register:clearfix} {register:makeEqualElementBoxHeight} {register:makeEqualElementColumnHeight}" style="{register:width}">
 					{field:content}
 				</ul>
 			)
@@ -86,7 +95,10 @@ plugin.tx_multicolumn_pi1 {
 
 			padding = padding: {field:columnPadding}
 			padding {
-				if.isTrue.field = columnPadding
+				if {
+					isTrue.field = columnPadding
+					isFalse.field = disableStyles
+				}
 				insertData = 1
 			}
 
@@ -101,12 +113,21 @@ plugin.tx_multicolumn_pi1 {
 				)
 			}
 		}
+		
+		2 = LOAD_REGISTER
+		2 {
+			styles = style="{register:width} {register:margin}"
+			styles {
+				insertData = 1
+				if.isFalse.field = disableStyles
+			}
+		}
 
 		3 = TEXT
 		3 {
 			insertData = 1
 			value (
-				<li style="{register:width} {register:margin}" class="column column{field:recordNumber} {field:isFirst} {field:isLast}">
+				<li {register:styles} class="column column{field:recordNumber} {field:isFirst} {field:isLast}">
 					{register:columnItems}
 				</li>
 			)
@@ -255,13 +276,60 @@ plugin.tx_multicolumn_pi1 {
 				}
 			}
 		}
+		
+		simpleTabs = COA
+		simpleTabs {
+			stdWrap.dataWrap = <li class="tabItem tabItem{field:recordNumber} clearfix"><div class="innerTab"><span class="simpleTabNavigationItemContent" style="display: none;">{field:header}</span>|</div></li>
+			10 = < tt_content
+			10 {
+				uploads {
+					10 = 
+				}
+				list {
+					10 =
+				}
+				text {
+					10 =
+				}
+				textpic {
+					10 =
+				}
+				image {
+					10 =
+				}
+				bullets {
+					10 = 
+				}
+				table {
+					10 =
+				}
+				multimedia {
+					10 = 
+				}
+				mailform {
+					10 =
+				}
+				search {
+					10 = 
+				}
+				login {
+					10 =
+				}
+				menu {
+					10 =
+				}
+				splash {
+					10 =
+				}
+			}
+		}
 	}
 
 		# effect box list
 	effectBox = CASE
 	effectBox {
 		stdWrap {
-			dataWrap = <div class="effectBox {field:effect} {field:effectBoxClass}" id="effectBox_{field:uid}">|</div>
+			dataWrap = <div class="effectBox effectBoxLoading {field:effect} {field:effectBoxClass}" id="effectBox_{field:uid}">|</div>
 			required = 1
 		}
 		key.field = effect
@@ -284,7 +352,21 @@ plugin.tx_multicolumn_pi1 {
 		vAccordion {
 			required = 1
 			field = effectBoxItems
-			dataWrap = <ul class="vAccordion">|</ul>
+			dataWrap = <ul class="vAccordion" id="effectBox_{field:uid}">|</ul>
+		}
+		
+		simpleTabs = TEXT
+		simpleTabs {
+			if.isTrue.field = effectBoxItems
+			insertData = 1
+			value (
+				<div class="simpleTabNavigationContainer">
+					
+				</div>
+				<ul class="simpleTabsContainer clearfix">
+					{field:effectBoxItems}
+				</ul>
+			)
 		}
 	}
 }

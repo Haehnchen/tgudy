@@ -12,6 +12,17 @@ tx_multicolumn {
 					fixHeight = EXT:multicolumn/res/layout/makeEqualElementBoxHeight.js
 				}
 			}
+			
+			makeEqualElementColumnHeight {
+				includeFiles {
+					jQuery = EXT:multicolumn/res/javascript/jQuery.js
+					jQuery {
+						priority = 1
+					}
+					
+					fixColumnHeight = EXT:multicolumn/res/layout/makeEqualElementBoxColumnHeight.js
+				}			
+			}
 		}
 		effectBox {
 				# set effect key to only allow specific effect (eg. sudoSliderTabSliding,easyAccordion)
@@ -36,6 +47,7 @@ tx_multicolumn {
 				#containerMeasure = %
 					# if you want to specifie a fixed width for column
 				#containerWidth =
+				#disableStyles = 1
 
 				# column settings
 					# number of columns
@@ -54,6 +66,12 @@ tx_multicolumn {
 
 					# Force equal height for each multicolumn item
 				#makeEqualElementBoxHeight = 1
+					
+					# Force equal height for each multicolumn column
+				#makeEqualElementColumnHeight = 1
+				
+					# disable the calculation of image width => take the result from plugin.tx_multicolumn_pi1.columnWidth
+				#disableAutomaticImageWidthCalculation = 1
 				
 			}
 		}
@@ -218,7 +236,31 @@ tx_multicolumn {
 				cssFiles {
 					vAccordion = EXT:multicolumn/res/effects/vAccordion/style.css
 				}
+				defaultOptions (
+					showFirst: true
+				)
 			}
+		}
+		
+		simpleTabs {
+			label = LLL:EXT:multicolumn/res/effects/locallang.xml:effectBox.effect.simpleTabs
+			config {
+				effectBoxClass = vAccordion
+				jsFiles {
+					jQuery = EXT:multicolumn/res/javascript/jQuery.js
+					jQuery {
+						priority = 1
+					}
+					simpleTabs = EXT:multicolumn/res/effects/simpleTabs/simpleTabs.js
+				}
+				cssFiles {
+					simpleTabs = EXT:multicolumn/res/effects/simpleTabs/style.css
+				}
+				
+				defaultOptions (
+					fixHeight : false
+				)
+			}		
 		}
 	}
 }

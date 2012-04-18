@@ -1,4 +1,15 @@
 (add new changes on top of this file)
+2011-12-14 Michael Birchler  <mbirchler@snowflake.ch>
+	* http://forge.typo3.org/issues/31057
+	* http://forge.typo3.org/issues/26733
+	
+2011-08-24 Michael Birchler  <mbirchler@snowflake.ch>
+	* beUserHasRightToSeeMultiColumnContainer : force $TSconfig['TCEFORM.']['tt_content.']['CType.']['removeItems'] before admin
+	
+2011-08-22 Michael Birchler  <mbirchler@snowflake.ch>
+	* Added new effect simple tabs
+	* Added possibility to disable inline styles
+
 2011-06-08 Michael Birchler  <mbirchler@snowflake.ch>
 	* Added support for TYPO3 4.5 gridviews (thx to Marc Bastian Heinrichs)
 	

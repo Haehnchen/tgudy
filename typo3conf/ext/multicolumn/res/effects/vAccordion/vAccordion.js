@@ -2,34 +2,49 @@ jQuery.noConflict();
 
 (function($) {
 		// function accordion
-	$.fn.accordion = function() {
-		var self = $(this);
-		var items = $(this).children();
+	$.fn.accordion = function(customOptions) {
+		var self = $(this)
+		,items = $(this).children()
+			// defaults
+		,defaultOptions = {
+		}
 			
+			// merge defaults with options in new settings object				
+		,options = $.extend({}, defaultOptions, customOptions);
+		
 		self.find('.effectBoxItemContent').hide();
-		self.find('li.effectBoxItemsFirst .effectBoxItemContent').show();
-		self.find('li.effectBoxItemsFirst').toggleClass('active');
+		if (options.showFirst == true) {
+			self.find('li.effectBoxItemsFirst .effectBoxItemContent').show();
+			self.find('li.effectBoxItemsFirst');
+		}
 		
 		$(items).each(function() {
 			$(this).children('.effectBoxItemTitle').click(function(event) {
-				var self = $(this);
-				var parent = self.parent('li.effectBoxItem');
-				
-				if (! self.parent('li.effectBoxItem').hasClass('active')) {
-					parent.toggleClass('active');
-					parent.siblings().removeClass('active');
-						
-					self.siblings('.effectBoxItemContent').slideDown();	
-					parent.siblings().children('.effectBoxItemContent').slideUp();
-				}
+				var 	$el = $(this),
+					$parent = $el.parent();
 				
 				event.preventDefault();
+				
+				if (! $parent().hasClass('active')) {
+					$parent().toggleClass('active');
+					$parent().siblings().removeClass('active');
+						
+					$el.siblings('.effectBoxItemContent').slideDown();	
+					$parent().siblings().children('.effectBoxItemContent').slideUp();
+				}
 			});
 		});
 	};
 })(jQuery);
 
 jQuery(document).ready(function($) {
-		// init accordion functions
-	$('ul.vAccordion').accordion();
+	var container = $('ul.vAccordion');
+	
+	container.each(function(index, element) {
+		var id = element.id.split('_')[1];
+		var customOptions = window['mullticolumnEffectBox_'+id] ? window['mullticolumnEffectBox_'+id] : {};
+			
+			// init accordion functions
+		$(this).accordion(customOptions);
+	});
 });

@@ -1,0 +1,33 @@
+.simpleTabsContainer,
+.simpleTabNavigation {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	min-height: 100%;
+}
+	.simpleTabNavigationItem a {
+		display: block;
+		text-decoration: none;
+		border-bottom: 4px solid #fff;
+	}
+	.simpleTabNavigationItem a:hover {
+		text-decoration: none;
+	}
+	.simpleTabNavigationItem:hover a,
+	.simpleTabNavigationItem.tabItemAct a {
+		border-bottom: 4px solid #f69600;
+	}
+	.simpleTabNavigation li {
+		float: left;
+		margin-left: 39px;
+	}
+	.simpleTabNavigation li:hover {
+		cursor: pointer;
+	}
+	.simpleTabNavigation li.simpleTabNavigationItem0 {
+		margin-left: 0;
+	}
+	
+.simpleTabsContainer {
+	width: 100%;
+}
