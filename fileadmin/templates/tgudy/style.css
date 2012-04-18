@@ -144,6 +144,17 @@ body, #footer-wrapper {
 	opacity:0.85;	
 }
  
+ 
+#slider {
+  width:900px;
+  overflow:hidden;
+	height:260px;
+}
+
+#slider > div {
+  height:260px;
+}
+ 
  #header-content  {
 
  }
@@ -228,9 +239,8 @@ body, #footer-wrapper {
 #header-content .frame {
   padding: 20px;
 	height:260px;
-  width:900px;
+
 	background: transparent url(img/header-slider.png) no-repeat top center; 
-  overflow:hidden;
 
 }
 

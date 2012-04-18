@@ -20,15 +20,14 @@ jQuery.noConflict();
 		}
 		
 		
-		// Fancybox Image
-		$("a.lightbox").fancybox({
-			'zoomSpeedIn': 500,
-			'zoomSpeedOut': 500,
-			'transitionIn': 'elastic',
-			'titlePosition':'over',
-			'overlayShow': true
-		});
+    // Fancybox Image
+    $("a.lightbox").fancybox({
+      helpers: {
+        title: { type : 'inside' }
+      }
+    });
 
+    
 		// Fancybox iFrame Content
 		$("a.lightbox-page").fancybox({
 			'zoomSpeedIn': 500,
